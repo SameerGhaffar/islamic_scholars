@@ -1,5 +1,6 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:islamic_scholars/generated/assets.dart';
+import 'package:islamic_scholars/screens/auth/login.dart';
 import 'package:islamic_scholars/utils/button.dart';
 import 'package:islamic_scholars/utils/colors.dart';
 import 'package:islamic_scholars/utils/constants.dart';
@@ -40,7 +41,7 @@ class _SignupScreenState extends State<SignupScreen> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    CircleImageWidget(height: 158,width: 158,isupload: true),
+                    const CircleImageWidget(height: 158,width: 158,isUpload: true),
                     TextFieldWidget(
                       controller: controller,
                       hint: " Name",
@@ -80,6 +81,12 @@ class _SignupScreenState extends State<SignupScreen> {
                           ),
                           TextSpan(
                             text: " Sign In",
+                            recognizer: TapGestureRecognizer()..onTap =(){
+                              Navigator.pushAndRemoveUntil(context,
+                                  MaterialPageRoute(
+                                    builder: (_) => const LoginScreen(),), (
+                                      route) => false);
+                            },
                             style: AppTextStyles.inter(
                               style: const TextStyle(
                                 color: CColors.blue,

@@ -4,7 +4,6 @@ import 'package:islamic_scholars/utils/button.dart';
 import 'package:islamic_scholars/utils/colors.dart';
 import 'package:islamic_scholars/utils/constants.dart';
 import 'package:islamic_scholars/utils/text_style.dart';
-import 'package:islamic_scholars/widgets/text_field_widget.dart';
 
 class ResetPasswordScreen extends StatefulWidget {
   const ResetPasswordScreen({super.key});

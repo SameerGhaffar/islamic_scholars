@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:islamic_scholars/generated/assets.dart';
+import 'package:islamic_scholars/screens/auth/forget_password.dart';
+import 'package:islamic_scholars/screens/auth/signup.dart';
 import 'package:islamic_scholars/utils/button.dart';
 import 'package:islamic_scholars/utils/colors.dart';
 import 'package:islamic_scholars/utils/constants.dart';
@@ -101,15 +103,25 @@ class _LoginScreenState extends State<LoginScreen> {
                         hint: " Password",
                       ),
                     ),
-                    Container(
-                      alignment: Alignment.centerRight,
-                      child: Text(
-                        "Forgot Password",
-                        style: AppTextStyles.inter(
-                          style: const TextStyle(
-                            color: CColors.blue,
-                            fontSize: 18,
-                            fontWeight: FontWeight.w500,
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) =>
+                                  const ForgetPasswordScreen(),
+                            ));
+                      },
+                      child: Container(
+                        alignment: Alignment.centerRight,
+                        child: Text(
+                          "Forgot Password",
+                          style: AppTextStyles.inter(
+                            style: const TextStyle(
+                              color: CColors.blue,
+                              fontSize: 18,
+                              fontWeight: FontWeight.w500,
+                            ),
                           ),
                         ),
                       ),
@@ -143,18 +155,36 @@ class _LoginScreenState extends State<LoginScreen> {
                         ),
                       ],
                     ),
-                    SizedBox(
+                    Container(
+                      decoration: BoxDecoration(
+                        boxShadow: [
+                          BoxShadow(
+                            color: const Color(0xff000000).withOpacity(0.1), // Color of the shadow
+                            blurRadius: 4, // Spread of the shadow
+                            offset: const Offset(0, 12),
+                          ),
+                        ],
+                      ),
                       width: 346,
                       height: 60,
                       child: ElevatedButton(
-                        onPressed: (){},
+                        onPressed: () {
+                          Navigator.pushAndRemoveUntil(
+                              context,
+                              MaterialPageRoute(
+                                builder: (_) => const SignupScreen(),
+                              ),
+                              (route) => false);
+                        },
                         style: ButtonStyle(
-                          backgroundColor: MaterialStateProperty.all(Colors.white),
+                          backgroundColor:
+                              MaterialStateProperty.all(Colors.white),
 
                           shape: MaterialStateProperty.all(
                             const RoundedRectangleBorder(
-                              side: BorderSide(color: CColors.blue,width: 2),
-                              borderRadius: BorderRadius.all(Radius.circular(6)),
+                              side: BorderSide(color: CColors.blue, width: 2),
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(6)),
                             ),
                           ),
                           //foregroundColor: MaterialStateProperty.all(Colors.white),
@@ -162,7 +192,8 @@ class _LoginScreenState extends State<LoginScreen> {
                         child: Text(
                           "SIGNUP",
                           style: AppTextStyles.inter(
-                              style: const TextStyle(fontSize: 18, color: CColors.blue)),
+                              style: const TextStyle(
+                                  fontSize: 18, color: CColors.blue)),
                         ),
                       ),
                     ),

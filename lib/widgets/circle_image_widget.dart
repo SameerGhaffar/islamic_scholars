@@ -4,17 +4,17 @@ import 'package:islamic_scholars/utils/colors.dart';
 import 'package:islamic_scholars/utils/text_style.dart';
 
 class CircleImageWidget extends StatelessWidget {
-  CircleImageWidget(
+  const CircleImageWidget(
       {super.key,
       required this.height,
       required this.width,
-      this.isupload,
+      this.isUpload,
       this.networkImage});
 
-  double height;
-  double width;
-  bool? isupload;
-  String? networkImage;
+  final double height;
+  final double width;
+  final bool? isUpload;
+  final String? networkImage;
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +31,7 @@ class CircleImageWidget extends StatelessWidget {
               networkImage!,
               fit: BoxFit.cover,
             )
-          : (isupload != null && isupload == true)
+          : (isUpload != null && isUpload == true)
               ? Center(
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
