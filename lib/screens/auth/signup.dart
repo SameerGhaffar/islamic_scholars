@@ -4,6 +4,7 @@ import 'package:islamic_scholars/utils/button.dart';
 import 'package:islamic_scholars/utils/colors.dart';
 import 'package:islamic_scholars/utils/constants.dart';
 import 'package:islamic_scholars/utils/text_style.dart';
+import 'package:islamic_scholars/widgets/circle_image_widget.dart';
 import 'package:islamic_scholars/widgets/text_field_widget.dart';
 
 class SignupScreen extends StatefulWidget {
@@ -39,131 +40,55 @@ class _SignupScreenState extends State<SignupScreen> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Container(
-                      constraints:
-                      const BoxConstraints(maxWidth: 203, maxHeight: 297),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.start,
+                    CircleImageWidget(height: 158,width: 158,isupload: true),
+                    TextFieldWidget(
+                      controller: controller,
+                      hint: " Name",
+                    ),
+                    TextFieldWidget(
+                      controller: controller,
+                      hint: " Email",
+                    ),
+                    TextFieldWidget(
+                      controller: controller,
+                      hint: " Phone",
+                    ),
+                    TextFieldWidget(
+                      controller: controller,
+                      hint: " Password",
+                    ),
+                    TextFieldWidget(
+                      controller: controller,
+                      hint: " Confirm Password",
+                    ),
+                    AppButtons.basicButton(
+                      text: "SIGNUP",
+                      onPressed: () {},
+                    ),
+                    RichText(
+                      text: TextSpan(
                         children: [
-                          const SizedBox(
-                            height: 167,
-                            width: 162,
-                            child: ImageIcon(
-                              AssetImage(Assets.imagesMainlogo),
-                              color: CColors.blue,
-                            ),
-                          ),
-                          const Padding(
-                            padding: EdgeInsets.symmetric(vertical: 5),
-                          ),
-                          Text(
-                            "ISLAMIC",
+                          TextSpan(
+                            text: "Already have an account?",
                             style: AppTextStyles.inter(
                               style: const TextStyle(
                                 color: CColors.dark,
-                                fontSize: 45,
-                                fontWeight: FontWeight.w900,
-                                height: 0.8,
+                                fontSize: 18,
+                                fontWeight: FontWeight.w600,
                               ),
                             ),
                           ),
-                          Text(
-                            "SCHOLARS",
+                          TextSpan(
+                            text: " Sign In",
                             style: AppTextStyles.inter(
                               style: const TextStyle(
-                                color: CColors.dark,
-                                fontSize: 35,
-                                fontWeight: FontWeight.w400,
-                                height: 0.8,
+                                color: CColors.blue,
+                                fontSize: 18,
+                                fontWeight: FontWeight.w600,
                               ),
                             ),
                           ),
                         ],
-                      ),
-                    ),
-                    Container(
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(8.0),
-                      ),
-                      child: TextFieldWidget(
-                        controller: controller,
-                        hint: " Email",
-                      ),
-                    ),
-                    Container(
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(8.0),
-                      ),
-                      child: TextFieldWidget(
-                        controller: controller,
-                        hint: " Password",
-                      ),
-                    ),
-                    Container(
-                      alignment: Alignment.centerRight,
-                      child: Text(
-                        "Forgot Password",
-                        style: AppTextStyles.inter(
-                          style: const TextStyle(
-                            color: CColors.blue,
-                            fontSize: 18,
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
-                      ),
-                    ),
-                    AppButtons.basicButton(
-                      text: "LOGIN",
-                      onPressed: () {},
-                    ),
-                    Row(
-                      children: [
-                        const Expanded(
-                            child: Divider(
-                              color: CColors.dark,
-                              thickness: 1,
-                            )),
-                        Text(
-                          " Don’t have an account? ",
-                          style: AppTextStyles.inter(
-                            style: const TextStyle(
-                              color: CColors.dark,
-                              fontSize: 18,
-                              fontWeight: FontWeight.w500,
-                            ),
-                          ),
-                        ),
-                        const Expanded(
-                          child: Divider(
-                            color: CColors.dark,
-                            thickness: 1,
-                          ),
-                        ),
-                      ],
-                    ),
-                    SizedBox(
-                      width: 346,
-                      height: 60,
-                      child: ElevatedButton(
-                        onPressed: (){},
-                        style: ButtonStyle(
-                          backgroundColor: MaterialStateProperty.all(Colors.white),
-
-                          shape: MaterialStateProperty.all(
-                            const RoundedRectangleBorder(
-                              side: BorderSide(color: CColors.blue,width: 2),
-                              borderRadius: BorderRadius.all(Radius.circular(6)),
-                            ),
-                          ),
-                          //foregroundColor: MaterialStateProperty.all(Colors.white),
-                        ),
-                        child: Text(
-                          "SIGNUP",
-                          style: AppTextStyles.inter(
-                              style: const TextStyle(fontSize: 18, color: CColors.blue)),
-                        ),
                       ),
                     ),
                   ],

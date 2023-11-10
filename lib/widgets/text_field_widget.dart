@@ -31,47 +31,53 @@ class TextFieldWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return TextField(
-      keyboardType: keyboardType,
-      enabled: enable,
-      onChanged: onChange,
-      obscureText: secureText ?? false,
-      style: AppTextStyles.inter(),
-      controller: controller,
-      decoration: InputDecoration(
-        contentPadding: verticalPadding == null
-            ? null
-            : EdgeInsets.symmetric(
-                vertical: verticalPadding!,
-              ),
-        // Adjust this value
-        hintText: hint,
-        hintStyle: AppTextStyles.inter(
-          style: const TextStyle(color: CColors.dark),
-        ),
-        prefixIcon: prefixWidget != null
-            ? Padding(
-                padding: const EdgeInsets.only(right: 15),
-                child: prefixWidget,
-              )
-            : null,
-        suffixIcon: suffixWidget,
-        focusColor: CColors.seaGreen,
-        focusedBorder: OutlineInputBorder(
-          borderSide: const BorderSide(
-            color: CColors.seaGreen,
-            style: BorderStyle.solid,
+    return Container(
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(8.0),
+      ),
+      child: TextField(
+        keyboardType: keyboardType,
+        enabled: enable,
+        onChanged: onChange,
+        obscureText: secureText ?? false,
+        style: AppTextStyles.inter(),
+        controller: controller,
+        decoration: InputDecoration(
+          contentPadding: verticalPadding == null
+              ? null
+              : EdgeInsets.symmetric(
+                  vertical: verticalPadding!,
+                ),
+          // Adjust this value
+          hintText: hint,
+          hintStyle: AppTextStyles.inter(
+            style: const TextStyle(color: CColors.dark),
           ),
-          borderRadius:
-              BorderRadius.circular(8.0), // Adjust the border radius as needed
-        ),
-        enabledBorder: OutlineInputBorder(
-          borderSide: const BorderSide(
-            color: CColors.seaGreen,
-            style: BorderStyle.solid,
+          prefixIcon: prefixWidget != null
+              ? Padding(
+                  padding: const EdgeInsets.only(right: 15),
+                  child: prefixWidget,
+                )
+              : null,
+          suffixIcon: suffixWidget,
+          focusColor: CColors.seaGreen,
+          focusedBorder: OutlineInputBorder(
+            borderSide: const BorderSide(
+              color: CColors.seaGreen,
+              style: BorderStyle.solid,
+            ),
+            borderRadius:
+                BorderRadius.circular(8.0), // Adjust the border radius as needed
           ),
-          borderRadius:
-              BorderRadius.circular(8.0), // Adjust the border radius as needed
+          enabledBorder: OutlineInputBorder(
+            borderSide: const BorderSide(
+              color: CColors.seaGreen,
+              style: BorderStyle.solid,
+            ),
+            borderRadius:
+                BorderRadius.circular(8.0), // Adjust the border radius as needed
+          ),
         ),
       ),
     );
