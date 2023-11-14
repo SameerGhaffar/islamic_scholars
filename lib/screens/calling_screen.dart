@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:islamic_scholars/generated/assets.dart';
 import 'package:islamic_scholars/utils/colors.dart';
 import 'package:islamic_scholars/utils/constants.dart';
 import 'package:islamic_scholars/utils/text_style.dart';
-import 'package:islamic_scholars/widgets/appbar_widget.dart';
 import 'package:islamic_scholars/widgets/circle_image_widget.dart';
 
 class CallingScreen extends StatelessWidget {
@@ -25,7 +25,6 @@ class CallingScreen extends StatelessWidget {
       body: Container(
         width: screenWidth,
         height: screenHeight,
-
         decoration: BoxDecoration(
           gradient: Constants.skinGradient(),
         ),
@@ -66,15 +65,51 @@ class CallingScreen extends StatelessWidget {
             Container(
               width: screenWidth,
               height: screenHeight * 0.13,
-              color: CColors.white75,
-              child: Row(
-                children: [
+              decoration: BoxDecoration(
+                color: CColors.white75,
+                border:Border.all(color: CColors.seaGreen)
 
-                ],
+              ),
+              child: Center(
+                child: SizedBox(
+                  width: screenWidth * 0.72,
+                  height: screenHeight * 0.06,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      button(
+                        asset: Assets.imagesVolumeUp,
+                        size: screenHeight * 0.041,
+                      ),
+                      button(
+                        asset: Assets.imagesVoice,
+                        size: screenHeight * 0.041,
+                      ),
+                      button(
+                        asset: Assets.imagesCall,
+                        size: screenHeight * 0.060,
+                      ),
+                    ],
+                  ),
+                ),
               ),
             )
           ],
         ),
+      ),
+    );
+  }
+
+  InkWell button(
+      {void Function()? onTap, required String asset, required double size}) {
+    return InkWell(
+      onTap: onTap,
+      child: Image(
+        image: AssetImage(asset),
+        fit: BoxFit.cover,
+        height: size,
+
       ),
     );
   }
