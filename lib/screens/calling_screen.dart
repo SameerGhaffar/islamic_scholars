@@ -17,17 +17,15 @@ class CallingScreen extends StatelessWidget {
     screenHeight = MediaQuery.of(context).size.height;
 
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        elevation: 0,
-        iconTheme: const IconThemeData(color: CColors.blue),
-      ),
+      // appBar: AppBar(
+      //   backgroundColor: Colors.white,
+      //   elevation: 0,
+      //   iconTheme: const IconThemeData(color: CColors.blue),
+      // ),
       body: Container(
         width: screenWidth,
-        padding: const EdgeInsets.symmetric(
-          horizontal: 10,
-          vertical: 10,
-        ),
+        height: screenHeight,
+
         decoration: BoxDecoration(
           gradient: Constants.skinGradient(),
         ),
@@ -65,6 +63,16 @@ class CallingScreen extends StatelessWidget {
                   "https://media.istockphoto.com/id/1189728361/photo/little-boy-smiling-against-a-gray-studio-background.jpg?s=612x612&w=0&k=20&c=PA3DKZcek_ZCjs_AQJss7c9THcmS_pVE49PXCRehZSk=",
             ),
             const Spacer(),
+            Container(
+              width: screenWidth,
+              height: screenHeight * 0.13,
+              color: CColors.white75,
+              child: Row(
+                children: [
+
+                ],
+              ),
+            )
           ],
         ),
       ),

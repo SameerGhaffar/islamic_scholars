@@ -13,7 +13,7 @@ class Constants {
 
   static DecorationImage bgImage() {
     return const DecorationImage(
-      image: AssetImage(Assets.imagesAuthbg),
+      image: AssetImage(Assets.imagesAuthBg),
       fit: BoxFit.fill,
       colorFilter: ColorFilter.mode(
           Colors.white38,
