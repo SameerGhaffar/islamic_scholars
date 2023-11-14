@@ -17,9 +17,14 @@ class SignupScreen extends StatefulWidget {
 
 class _SignupScreenState extends State<SignupScreen> {
   TextEditingController controller = TextEditingController();
+  late double screenWidth;
+  late double screenHeight;
 
   @override
   Widget build(BuildContext context) {
+    screenWidth = MediaQuery.of(context).size.width;
+    screenHeight = MediaQuery.of(context).size.height;
+
     return Scaffold(
       resizeToAvoidBottomInset: false,
       body: Stack(
@@ -35,13 +40,13 @@ class _SignupScreenState extends State<SignupScreen> {
           SafeArea(
             child: Center(
               child: SizedBox(
-                height: 743,
-                width: 348,
+                height:screenHeight*0.72,
+                width: screenWidth*0.8,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    const CircleImageWidget(height: 158,width: 158,isUpload: true),
+                    CircleImageWidget(size: screenHeight * 0.17, isUpload: true),
                     TextFieldWidget(
                       controller: controller,
                       hint: " Name",
@@ -63,6 +68,7 @@ class _SignupScreenState extends State<SignupScreen> {
                       hint: " Confirm Password",
                     ),
                     AppButtons.basicButton(
+                      context: context,
                       text: "SIGNUP",
                       onPressed: () {},
                     ),
@@ -81,12 +87,13 @@ class _SignupScreenState extends State<SignupScreen> {
                           ),
                           TextSpan(
                             text: " Sign In",
-                            recognizer: TapGestureRecognizer()..onTap =(){
-                              Navigator.pushAndRemoveUntil(context,
-                                  MaterialPageRoute(
-                                    builder: (_) => const LoginScreen(),), (
-                                      route) => false);
-                            },
+                            recognizer: TapGestureRecognizer()
+                              ..onTap = () {
+                                Navigator.pushAndRemoveUntil(context,
+                                    MaterialPageRoute(
+                                      builder: (_) => const LoginScreen(),), (
+                                        route) => false);
+                              },
                             style: AppTextStyles.inter(
                               style: const TextStyle(
                                 color: CColors.blue,

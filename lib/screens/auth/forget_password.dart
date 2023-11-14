@@ -106,6 +106,7 @@ class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
                       ),
                     ),
                     AppButtons.basicButton(
+                      context: context,
                       text: "CONTINUE",
                       onPressed: () {},
                     ),

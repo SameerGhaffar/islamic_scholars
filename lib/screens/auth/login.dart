@@ -127,6 +127,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                     ),
                     AppButtons.basicButton(
+                      context: context,
                       text: "LOGIN",
                       onPressed: () {},
                     ),

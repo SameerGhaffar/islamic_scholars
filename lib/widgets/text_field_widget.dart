@@ -67,16 +67,16 @@ class TextFieldWidget extends StatelessWidget {
               color: CColors.seaGreen,
               style: BorderStyle.solid,
             ),
-            borderRadius:
-                BorderRadius.circular(8.0), // Adjust the border radius as needed
+            borderRadius: BorderRadius.circular(
+                8.0), // Adjust the border radius as needed
           ),
           enabledBorder: OutlineInputBorder(
             borderSide: const BorderSide(
               color: CColors.seaGreen,
               style: BorderStyle.solid,
             ),
-            borderRadius:
-                BorderRadius.circular(8.0), // Adjust the border radius as needed
+            borderRadius: BorderRadius.circular(
+                8.0), // Adjust the border radius as needed
           ),
         ),
       ),

@@ -89,6 +89,7 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
                       ),
                     ),
                     AppButtons.basicButton(
+                      context: context,
                       text: "CONTINUE",
                       onPressed: () {},
                     ),
