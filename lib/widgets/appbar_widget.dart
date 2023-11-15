@@ -10,7 +10,9 @@ class MyAppBarWidget extends StatelessWidget implements PreferredSizeWidget {
       this.fontWeight,
       this.fontSize,
       this.iconColor,
-      this.elevation});
+      this.elevation,
+        this.bottom
+      });
 
   final Color? bgColor;
   final String text;
@@ -19,10 +21,12 @@ class MyAppBarWidget extends StatelessWidget implements PreferredSizeWidget {
   final double? fontSize;
   final FontWeight? fontWeight;
   final double? elevation;
+  final PreferredSizeWidget? bottom;
 
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      bottom:bottom ,
       iconTheme: IconThemeData(
         color: iconColor ?? CColors.blue,
       ),

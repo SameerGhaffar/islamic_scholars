@@ -51,7 +51,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             height: 167,
                             width: 162,
                             child: ImageIcon(
-                              AssetImage(Assets.imagesMainLogo),
+                              AssetImage(Assets.imagesMainlogo),
                               color: CColors.blue,
                             ),
                           ),

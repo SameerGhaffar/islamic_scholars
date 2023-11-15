@@ -10,7 +10,9 @@ class CColors {
   // static const white = Color(0xffFFFFFF);
   static const dark = Color(0xff3B3B3B);
   static final white75 = const Color(0xffFFFFFF).withOpacity(0.75);
+  static final white50 = const Color(0xffFFFFFF).withOpacity(0.50);
   static const blue = Color(0xff0A588C);
+  static const red = Color(0xffFF0000);
   static const seaGreen = Color(0xff57ADAC);
   static const skinColor = Color(0xffDBC8B1);
   static const skinColordark = Color(0xffDEB99D);

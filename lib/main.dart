@@ -1,10 +1,8 @@
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:islamic_scholars/screens/auth/signup.dart';
-import 'package:islamic_scholars/screens/package_screen.dart';
+import 'package:islamic_scholars/screens/admin/manage_users.dart';
 
 void main() {
   runApp(
@@ -13,10 +11,10 @@ void main() {
       builder: (context) => const MyApp(), // Wrap your app
     ),
   );
-  SystemChrome.setPreferredOrientations([
-    DeviceOrientation.portraitUp,
-    DeviceOrientation.portraitDown,
-  ]);
+  // SystemChrome.setPreferredOrientations([
+  //   DeviceOrientation.portraitUp,
+  //   DeviceOrientation.portraitDown,
+  // ]);
 }
 // void main() {
 //   runApp(const MyApp());
@@ -37,7 +35,7 @@ class MyApp extends StatelessWidget {
       ),
       locale: DevicePreview.locale(context),
       builder: DevicePreview.appBuilder,
-      home: const PackagesScreen(),
+      home:const ManageUsersScreen(),
       //home: SignupScreen(),
     );
   }
