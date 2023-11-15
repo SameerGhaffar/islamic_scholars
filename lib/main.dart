@@ -3,6 +3,8 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:islamic_scholars/screens/admin/manage_users/manage_users.dart';
+import 'package:islamic_scholars/screens/admin/user_info_screen.dart';
+import 'package:islamic_scholars/screens/auth/login.dart';
 
 void main() {
   runApp(
@@ -35,7 +37,7 @@ class MyApp extends StatelessWidget {
       ),
       locale: DevicePreview.locale(context),
       builder: DevicePreview.appBuilder,
-      home:const ManageUsersScreen(),
+      home:  const LoginScreen(),
       //home: SignupScreen(),
     );
   }

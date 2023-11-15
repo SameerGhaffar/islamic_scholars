@@ -20,10 +20,11 @@ class _LoginScreenState extends State<LoginScreen> {
 
   late double screenWidth;
   late double screenHeight;
+
   @override
   Widget build(BuildContext context) {
     screenWidth = MediaQuery.of(context).size.width;
-    screenWidth = MediaQuery.of(context).size.height;
+    screenHeight = MediaQuery.of(context).size.height;
     return Scaffold(
       resizeToAvoidBottomInset: false,
       body: Stack(
@@ -161,50 +162,61 @@ class _LoginScreenState extends State<LoginScreen> {
                         ),
                       ],
                     ),
-                    Container(
-                      decoration: BoxDecoration(
-                        boxShadow: [
-                          BoxShadow(
-                            color: const Color(0xff000000).withOpacity(0.1),
-                            // Color of the shadow
-                            blurRadius: 4,
-                            // Spread of the shadow
-                            offset: const Offset(0, 12),
-                          ),
-                        ],
-                      ),
-                      width: 346,
-                      height: 60,
-                      child: ElevatedButton(
-                        onPressed: () {
-                          Navigator.pushAndRemoveUntil(
-                              context,
-                              MaterialPageRoute(
-                                builder: (_) => const SignupScreen(),
-                              ),
-                              (route) => false);
-                        },
-                        style: ButtonStyle(
-                          backgroundColor:
-                              MaterialStateProperty.all(Colors.white),
-
-                          shape: MaterialStateProperty.all(
-                            const RoundedRectangleBorder(
-                              side: BorderSide(color: CColors.blue, width: 2),
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(6)),
+                    BasicButtonWidget(
+                      height: screenHeight,
+                      width: screenWidth,
+                      text: "Signup",
+                      onPressed: () {
+                        Navigator.pushAndRemoveUntil(
+                            context,
+                            MaterialPageRoute(
+                              builder: (_) => const SignupScreen(),
                             ),
-                          ),
-                          //foregroundColor: MaterialStateProperty.all(Colors.white),
-                        ),
-                        child: Text(
-                          "SIGNUP",
-                          style: AppTextStyles.inter(
-                              style: const TextStyle(
-                                  fontSize: 18, color: CColors.blue)),
-                        ),
-                      ),
+                                (route) => false);
+                      },
+                      color: Colors.white,
+                      borderColor: CColors.blue,
+                      textColor: CColors.blue,
                     ),
+                    // Container(
+                    //   decoration: BoxDecoration(
+                    //     boxShadow: [
+                    //       BoxShadow(
+                    //         color: const Color(0xff000000).withOpacity(0.1),
+                    //         // Color of the shadow
+                    //         blurRadius: 4,
+                    //         // Spread of the shadow
+                    //         offset: const Offset(0, 12),
+                    //       ),
+                    //     ],
+                    //   ),
+                    //   width: 346,
+                    //   height: 60,
+                    //   child: ElevatedButton(
+                    //     onPressed: () {
+                    //
+                    //     },
+                    //     style: ButtonStyle(
+                    //       backgroundColor:
+                    //           MaterialStateProperty.all(Colors.white),
+                    //
+                    //       shape: MaterialStateProperty.all(
+                    //         const RoundedRectangleBorder(
+                    //           side: BorderSide(color: CColors.blue, width: 2),
+                    //           borderRadius:
+                    //               BorderRadius.all(Radius.circular(6)),
+                    //         ),
+                    //       ),
+                    //       //foregroundColor: MaterialStateProperty.all(Colors.white),
+                    //     ),
+                    //     child: Text(
+                    //       "SIGNUP",
+                    //       style: AppTextStyles.inter(
+                    //           style: const TextStyle(
+                    //               fontSize: 18, color: CColors.blue)),
+                    //     ),
+                    //   ),
+                    // ),
                   ],
                 ),
               ),
