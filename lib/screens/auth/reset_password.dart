@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:islamic_scholars/generated/assets.dart';
-import 'package:islamic_scholars/utils/button.dart';
 import 'package:islamic_scholars/utils/colors.dart';
 import 'package:islamic_scholars/utils/constants.dart';
 import 'package:islamic_scholars/utils/text_style.dart';
+import 'package:islamic_scholars/widgets/button_widget.dart';
 
 class ResetPasswordScreen extends StatefulWidget {
   const ResetPasswordScreen({super.key});
@@ -15,8 +15,13 @@ class ResetPasswordScreen extends StatefulWidget {
 class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
   TextEditingController controller = TextEditingController();
 
+  late double screenWidth;
+  late double screenHeight;
   @override
   Widget build(BuildContext context) {
+
+    screenWidth = MediaQuery.of(context).size.width;
+    screenWidth = MediaQuery.of(context).size.height;
     return Scaffold(
       resizeToAvoidBottomInset: false,
       body: Stack(
@@ -88,8 +93,9 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
                         ),
                       ),
                     ),
-                    AppButtons.basicButton(
-                      context: context,
+                    BasicButtonWidget(
+                      height: screenHeight,
+                      width: screenWidth,
                       text: "CONTINUE",
                       onPressed: () {},
                     ),

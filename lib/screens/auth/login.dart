@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:islamic_scholars/generated/assets.dart';
 import 'package:islamic_scholars/screens/auth/forget_password.dart';
 import 'package:islamic_scholars/screens/auth/signup.dart';
-import 'package:islamic_scholars/utils/button.dart';
 import 'package:islamic_scholars/utils/colors.dart';
 import 'package:islamic_scholars/utils/constants.dart';
 import 'package:islamic_scholars/utils/text_style.dart';
+import 'package:islamic_scholars/widgets/button_widget.dart';
 import 'package:islamic_scholars/widgets/text_field_widget.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -18,8 +18,12 @@ class LoginScreen extends StatefulWidget {
 class _LoginScreenState extends State<LoginScreen> {
   TextEditingController controller = TextEditingController();
 
+  late double screenWidth;
+  late double screenHeight;
   @override
   Widget build(BuildContext context) {
+    screenWidth = MediaQuery.of(context).size.width;
+    screenWidth = MediaQuery.of(context).size.height;
     return Scaffold(
       resizeToAvoidBottomInset: false,
       body: Stack(
@@ -126,8 +130,9 @@ class _LoginScreenState extends State<LoginScreen> {
                         ),
                       ),
                     ),
-                    AppButtons.basicButton(
-                      context: context,
+                    BasicButtonWidget(
+                      height: screenHeight,
+                      width: screenWidth,
                       text: "LOGIN",
                       onPressed: () {},
                     ),

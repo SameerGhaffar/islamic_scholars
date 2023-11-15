@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:islamic_scholars/screens/calling_screen.dart';
-import 'package:islamic_scholars/utils/button.dart';
 import 'package:islamic_scholars/utils/colors.dart';
 import 'package:islamic_scholars/utils/constants.dart';
 import 'package:islamic_scholars/widgets/appbar_widget.dart';
+import 'package:islamic_scholars/widgets/button_widget.dart';
 import 'package:islamic_scholars/widgets/list_tile_widget.dart';
 
 class PackagesScreen extends StatefulWidget {
@@ -23,11 +23,13 @@ class _PackagesScreenAddState extends State<PackagesScreen> {
     // Add more packages as needed
   ];
   late double screenWidth;
+  late double screenHeight;
   int? selectedIndex;
 
   @override
   Widget build(BuildContext context) {
     screenWidth = MediaQuery.of(context).size.width;
+    screenWidth = MediaQuery.of(context).size.height;
 
     return Scaffold(
       appBar: const MyAppBarWidget(
@@ -72,8 +74,9 @@ class _PackagesScreenAddState extends State<PackagesScreen> {
                   itemCount: packageData.length,
                 ),
               ),
-              AppButtons.basicButton(
-                context: context,
+              BasicButtonWidget(
+                height: screenHeight,
+                width: screenWidth,
                 text: "CONTINUE",
                 onPressed: () {
                   Navigator.push(context, MaterialPageRoute(builder: (context) => CallingScreen(),));

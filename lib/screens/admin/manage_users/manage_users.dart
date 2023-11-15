@@ -48,15 +48,17 @@ class _ManageUsersScreenState extends State<ManageUsersScreen> {
                 ),
                 child: myTabBar(),
               ),
-              const Expanded(
+              Expanded(
                 child: TabBarView(
                   physics: NeverScrollableScrollPhysics(),
                   children: [
-                    Expanded(
-                      child: ScholarsWidget(),
+                    ScholarsWidget(
+                      screenHeight: screenHeight,
+                      screenWidth: screenWidth,
                     ),
-                    Expanded(
-                      child: CustomerWidget(),
+                    CustomerWidget(
+                      screenHeight: screenHeight,
+                      screenWidth: screenWidth,
                     )
                   ],
                 ),

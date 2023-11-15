@@ -1,10 +1,10 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:islamic_scholars/screens/auth/login.dart';
-import 'package:islamic_scholars/utils/button.dart';
 import 'package:islamic_scholars/utils/colors.dart';
 import 'package:islamic_scholars/utils/constants.dart';
 import 'package:islamic_scholars/utils/text_style.dart';
+import 'package:islamic_scholars/widgets/button_widget.dart';
 import 'package:islamic_scholars/widgets/circle_image_widget.dart';
 import 'package:islamic_scholars/widgets/text_field_widget.dart';
 
@@ -67,8 +67,9 @@ class _SignupScreenState extends State<SignupScreen> {
                       controller: controller,
                       hint: " Confirm Password",
                     ),
-                    AppButtons.basicButton(
-                      context: context,
+                    BasicButtonWidget(
+                      height: screenHeight,
+                      width: screenWidth,
                       text: "SIGNUP",
                       onPressed: () {},
                     ),

@@ -2,11 +2,22 @@ import 'package:flutter/material.dart';
 import 'package:islamic_scholars/utils/colors.dart';
 import 'package:islamic_scholars/utils/text_style.dart';
 
-class AppButtons {
-  static Widget basicButton(
-      {void Function()? onPressed,
-      required String text,
-      required BuildContext context}) {
+class BasicButtonWidget extends StatelessWidget {
+  const BasicButtonWidget({
+    super.key,
+    required this.height,
+    required this.width,
+    required this.text,
+    this.onPressed,
+  });
+
+  final double height;
+  final double width;
+  final String text;
+  final void Function()? onPressed;
+
+  @override
+  Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
         boxShadow: [
@@ -19,8 +30,8 @@ class AppButtons {
           ),
         ],
       ),
-      width: MediaQuery.of(context).size.width * 0.80,
-      height: MediaQuery.of(context).size.height * 0.06,
+      width: width * 0.80,
+      height: height * 0.06,
       child: ElevatedButton(
         onPressed: onPressed,
         style: ButtonStyle(

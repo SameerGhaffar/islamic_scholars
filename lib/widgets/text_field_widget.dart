@@ -52,7 +52,7 @@ class TextFieldWidget extends StatelessWidget {
           // Adjust this value
           hintText: hint,
           hintStyle: AppTextStyles.inter(
-            style: const TextStyle(color: CColors.dark),
+            style: const TextStyle(color: CColors.dark,textBaseline: TextBaseline.alphabetic),
           ),
           prefixIcon: prefixWidget != null
               ? Padding(
