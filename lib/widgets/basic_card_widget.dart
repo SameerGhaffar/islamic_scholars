@@ -1,20 +1,25 @@
 import 'package:flutter/material.dart';
+import 'package:islamic_scholars/generated/assets.dart';
 import 'package:islamic_scholars/utils/colors.dart';
 import 'package:islamic_scholars/utils/text_style.dart';
 import 'package:islamic_scholars/widgets/circle_image_widget.dart';
+import 'package:islamic_scholars/widgets/selectionWidget.dart';
 
 class BasicCardWidget extends StatelessWidget {
   const BasicCardWidget({
     super.key,
-     required this.height,
+    required this.height,
     required this.width,
     required this.text,
-    required this.asset,
-     this.hPercent,
-     this.wPercent,
+    this.asset,
+    this.hPercent,
+    this.wPercent,
     this.networkImage,
+    this.borderColor,
+    this.borderWidth,
+    this.bgColor,
     this.onTap,
-
+    this.widget,
   });
 
   final double height;
@@ -23,22 +28,28 @@ class BasicCardWidget extends StatelessWidget {
   final double width;
   final String text;
   final String? networkImage;
-  final String asset;
+  final String? asset;
+  final Color? bgColor;
+  final Color? borderColor;
+  final double? borderWidth;
   final void Function()? onTap;
+  final Widget? widget;
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 3),
       child: Container(
-        height: hPercent != null ? (height * hPercent!) :  height * 0.0794,
-        width: wPercent !=null ? (width * wPercent!) : width * 0.937,
+        height: hPercent != null ? (height * hPercent!) : height * 0.0794,
+        width: wPercent != null ? (width * wPercent!) : width * 0.937,
         decoration: BoxDecoration(
-          color: Colors.white,
-          border: Border.all(color: CColors.seaGreen),
+          color: bgColor ?? Colors.white,
+          border: Border.all(
+              color: borderColor ?? CColors.seaGreen,
+              width: borderWidth ?? 1.0),
           borderRadius: const BorderRadius.all(Radius.circular(10)),
         ),
-        padding: const EdgeInsets.symmetric(horizontal: 18),
+        padding: const EdgeInsets.symmetric(horizontal: 10),
         child: Row(
           children: [
             networkImage != null
@@ -57,15 +68,17 @@ class BasicCardWidget extends StatelessWidget {
                     style: const TextStyle(fontSize: 18, color: CColors.dark)),
               ),
             ),
-            InkWell(
-              onTap: onTap,
-              child:  Image(
-                image: AssetImage(asset),
-                fit: BoxFit.cover,
-                height: 30,
-                width: 30,
-              ),
-            ),
+            asset != null
+                ? InkWell(
+                    onTap: onTap,
+                    child: Image(
+                      image: AssetImage(asset!),
+                      fit: BoxFit.cover,
+                      height: 30,
+                      width: 30,
+                    ),
+                  )
+                : widget!,
           ],
         ),
       ),

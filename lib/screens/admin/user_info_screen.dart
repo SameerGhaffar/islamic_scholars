@@ -7,12 +7,20 @@ import 'package:islamic_scholars/widgets/appbar_widget.dart';
 import 'package:islamic_scholars/widgets/basic_card_widget.dart';
 import 'package:islamic_scholars/widgets/button_widget.dart';
 import 'package:islamic_scholars/widgets/circle_image_widget.dart';
+import 'package:islamic_scholars/widgets/selectionWidget.dart';
 
-class UserInfoScreen extends StatelessWidget {
+class UserInfoScreen extends StatefulWidget {
   UserInfoScreen({super.key});
 
+  @override
+  State<UserInfoScreen> createState() => _UserInfoScreenState();
+}
+
+class _UserInfoScreenState extends State<UserInfoScreen> {
   late double screenHeight;
   late double screenWidth;
+
+  int selectedIndex = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -49,7 +57,7 @@ class UserInfoScreen extends StatelessWidget {
                         "User Name",
                         style: AppTextStyles.inter(
                           style: const TextStyle(
-                            fontSize: 18,
+                            fontSize: 22,
                             fontWeight: FontWeight.bold,
                             color: CColors.blue,
                           ),
@@ -152,6 +160,7 @@ class UserInfoScreen extends StatelessWidget {
                   width: screenWidth * 0.2721,
                   child: const Divider(
                     color: CColors.dark,
+                    thickness: 1.0,
                   ),
                 ),
                 Column(
@@ -187,6 +196,25 @@ class UserInfoScreen extends StatelessWidget {
                       width: screenWidth,
                       asset: Assets.imagesArrowRight,
                       text: "View Earnings",
+                    ),
+                    BasicCardWidget(
+                      height: screenHeight,
+                      width: screenWidth,
+                      text: "Account Type",
+                      bgColor: Colors.transparent,
+                      borderWidth: 3,
+                      widget: SelectionWidget(
+                        height: screenHeight,
+                        width: screenWidth,
+                        options: ["Scholars", "Customer"],
+                        selectedIndex: selectedIndex,
+                        onSelected: (value) {
+                          setState(() {
+                            selectedIndex = value;
+                            print(value);
+                          });
+                        },
+                      ),
                     ),
                     BasicCardWidget(
                       height: screenHeight,
