@@ -21,7 +21,7 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
   Widget build(BuildContext context) {
 
     screenWidth = MediaQuery.of(context).size.width;
-    screenWidth = MediaQuery.of(context).size.height;
+    screenHeight = MediaQuery.of(context).size.height;
     return Scaffold(
       resizeToAvoidBottomInset: false,
       body: Stack(

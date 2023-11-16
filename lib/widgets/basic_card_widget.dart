@@ -6,15 +6,20 @@ import 'package:islamic_scholars/widgets/circle_image_widget.dart';
 class BasicCardWidget extends StatelessWidget {
   const BasicCardWidget({
     super.key,
-    required this.height,
+     required this.height,
     required this.width,
     required this.text,
     required this.asset,
+     this.hPercent,
+     this.wPercent,
     this.networkImage,
     this.onTap,
+
   });
 
   final double height;
+  final double? hPercent;
+  final double? wPercent;
   final double width;
   final String text;
   final String? networkImage;
@@ -26,8 +31,8 @@ class BasicCardWidget extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 3),
       child: Container(
-        height: height * 0.0794,
-        width: width * 0.937,
+        height: hPercent != null ? (height * hPercent!) :  height * 0.0794,
+        width: wPercent !=null ? (width * wPercent!) : width * 0.937,
         decoration: BoxDecoration(
           color: Colors.white,
           border: Border.all(color: CColors.seaGreen),

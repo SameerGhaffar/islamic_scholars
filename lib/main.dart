@@ -3,8 +3,14 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:islamic_scholars/screens/admin/manage_users/manage_users.dart';
+import 'package:islamic_scholars/screens/admin/package_add.dart';
 import 'package:islamic_scholars/screens/admin/user_info_screen.dart';
+import 'package:islamic_scholars/screens/auth/forget_password.dart';
 import 'package:islamic_scholars/screens/auth/login.dart';
+import 'package:islamic_scholars/screens/auth/reset_password.dart';
+import 'package:islamic_scholars/screens/auth/signup.dart';
+
+import 'screens/package_screen.dart';
 
 void main() {
   runApp(
@@ -37,7 +43,7 @@ class MyApp extends StatelessWidget {
       ),
       locale: DevicePreview.locale(context),
       builder: DevicePreview.appBuilder,
-      home:  const LoginScreen(),
+      home:   const PackagesScreenAdd(),
       //home: SignupScreen(),
     );
   }
