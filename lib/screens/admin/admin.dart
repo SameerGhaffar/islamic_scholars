@@ -5,8 +5,8 @@ import 'package:islamic_scholars/utils/constants.dart';
 import 'package:islamic_scholars/utils/text_style.dart';
 import 'package:islamic_scholars/widgets/circle_image_widget.dart';
 
-class Admin extends StatelessWidget {
-  Admin({super.key});
+class AdminScreen extends StatelessWidget {
+  AdminScreen({super.key});
 
   late double screenWidth;
   late double screenHeight;
@@ -16,220 +16,223 @@ class Admin extends StatelessWidget {
     screenWidth = MediaQuery.of(context).size.width;
     screenHeight = MediaQuery.of(context).size.height;
 
-    return Scaffold(
-      body: Container(
-        width: screenWidth,
-        height: screenHeight,
-        decoration: BoxDecoration(
-          gradient: Constants.skinGradient(),
-        ),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            SizedBox(
-              height: screenHeight * 0.07,
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(vertical: 5),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-
-                  Text(
-                    "Scholars",
-                    style: AppTextStyles.inter(
-                      style: const TextStyle(
-                          fontSize: 14,
-                          fontWeight: FontWeight.bold,
-                          color: CColors.dark),
-                    ),
-                  ),
-                  const Padding(padding: EdgeInsets.only(left: 6)),
-
-                  Text(
-                    "Commissions",
-                    style: AppTextStyles.inter(
-                      style: const TextStyle(
-                          fontSize: 14,
-                          fontWeight: FontWeight.bold,
-                          color: CColors.dark),
-                    ),
-                  ),
-                  Text(
-                    "Earnings",
-                    style: AppTextStyles.inter(
-                      style: const TextStyle(
-                          fontSize: 14,
-                          fontWeight: FontWeight.bold,
-                          color: CColors.dark),
-                    ),
-                  ),
-                ],
+    return Container(
+      decoration: BoxDecoration(
+        gradient: Constants.skinGradient(),
+      ),
+      child: Scaffold(
+        backgroundColor: Colors.transparent,
+        body: SizedBox(
+          width: screenWidth,
+          height: screenHeight,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              SizedBox(
+                height: screenHeight * 0.07,
               ),
-            ),
-            Expanded(
-              child: SingleChildScrollView(
-                child: Table(
-                  defaultVerticalAlignment: TableCellVerticalAlignment.middle,
-                  // defaultColumnWidth: const IntrinsicColumnWidth(),
-                  columnWidths: const {
-                    0: FlexColumnWidth(4),
-                    1: FlexColumnWidth(2),
-                    2: FlexColumnWidth(3),
-                  },
-                  border: TableBorder.symmetric(
-                    inside: const BorderSide(width: 1.0, color: Colors.black),
-                    outside: const BorderSide(width: 1.0, color: Colors.black),
-                  ),
-                  children: List.generate(
-                    4,
-                    (index) => TableRow(
-                      children: [
-                        Container(
-                          alignment: Alignment.center,
-                          padding: const EdgeInsets.symmetric(
-                              horizontal: 10, vertical: 15),
-                          child: Row(
-                            children: [
-                              CircleImageWidget(
-                                size: screenHeight * 0.031,
-                              ),
-                              SizedBox(
-                                width: screenWidth * 0.03,
-                              ),
-                              Expanded(
-                                child: Text(
-                                  "User Name",
-                                  maxLines: 2,
-                                  style: AppTextStyles.inter(
-                                    style: const TextStyle(
-                                        fontSize: 14,
-                                        fontWeight: FontWeight.bold,
-                                        color: CColors.dark),
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                        Container(
-                          padding: const EdgeInsets.all(8.0),
-                          alignment: Alignment.center,
-                          child: Text(
-                            "10%",
-                            softWrap: true,
-                            maxLines: 2,
-                            style: AppTextStyles.inter(
-                              style: const TextStyle(
-                                  fontSize: 12,
-                                  fontWeight: FontWeight.w500,
-                                  color: CColors.dark),
-                            ),
-                          ),
-                        ),
-                        Container(
-                          alignment: Alignment.center,
-                          padding: const EdgeInsets.symmetric(
-                              horizontal: 10, vertical: 15),
-                          child: Text(
-                            "৳5000",
-                            style: AppTextStyles.inter(
-                              style: const TextStyle(
-                                  fontSize: 12,
-                                  fontWeight: FontWeight.w500,
-                                  color: CColors.dark),
-                            ),
-                          ),
-                        ),
-                      ],
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 5),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+
+                    Text(
+                      "Scholars",
+                      style: AppTextStyles.inter(
+                        style: const TextStyle(
+                            fontSize: 14,
+                            fontWeight: FontWeight.bold,
+                            color: CColors.dark),
+                      ),
                     ),
-                  ),
+                    const Padding(padding: EdgeInsets.only(left: 6)),
+
+                    Text(
+                      "Commissions",
+                      style: AppTextStyles.inter(
+                        style: const TextStyle(
+                            fontSize: 14,
+                            fontWeight: FontWeight.bold,
+                            color: CColors.dark),
+                      ),
+                    ),
+                    Text(
+                      "Earnings",
+                      style: AppTextStyles.inter(
+                        style: const TextStyle(
+                            fontSize: 14,
+                            fontWeight: FontWeight.bold,
+                            color: CColors.dark),
+                      ),
+                    ),
+                  ],
                 ),
               ),
-            ),
-            Container(
-              width: screenWidth,
-              height: screenHeight * 0.26,
-              color: CColors.white75,
-              alignment: Alignment.bottomCenter,
-              child: Column(
-                children: [
-                  Row(
-                    children: [
-                      myContainer(
-                        text: "Users",
-                        image: Assets.imagesUsers,
-                      ),
-                      myContainer(
-                          text: "Complains",
-                          image: Assets.imagesComplain,
-                          badgeText: "3"),
-                      myContainer(
-                          text: "Bookings",
-                          image: Assets.imagesTicket,
-                          badgeText: "10"),
-                    ],
-                  ),
-                  Expanded(
-                    child: Row(
-                      children: [
-                        Expanded(
-                          child: Container(
-                            decoration: BoxDecoration(
-                              border: Border.all(
-                                  color: CColors.seaGreen, width: 1.0),
-                            ),
+              Expanded(
+                child: SingleChildScrollView(
+                  child: Table(
+                    defaultVerticalAlignment: TableCellVerticalAlignment.middle,
+                    // defaultColumnWidth: const IntrinsicColumnWidth(),
+                    columnWidths: const {
+                      0: FlexColumnWidth(4),
+                      1: FlexColumnWidth(2),
+                      2: FlexColumnWidth(3),
+                    },
+                    border: TableBorder.symmetric(
+                      inside: const BorderSide(width: 1.0, color: Colors.black),
+                      outside: const BorderSide(width: 1.0, color: Colors.black),
+                    ),
+                    children: List.generate(
+                      4,
+                      (index) => TableRow(
+                        children: [
+                          Container(
                             alignment: Alignment.center,
-                            child: Text(
-                              "Packages",
-                              style: AppTextStyles.inter(
-                                style: const TextStyle(
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.bold,
-                                    color: CColors.dark),
-                              ),
-                            ),
-                          ),
-                        ),
-                        Expanded(
-                          child: Container(
-                            alignment: Alignment.center,
-                            decoration: BoxDecoration(
-                              border: Border.all(
-                                  color: CColors.seaGreen, width: 1.0),
-                            ),
+                            padding: const EdgeInsets.symmetric(
+                                horizontal: 10, vertical: 15),
                             child: Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
                               children: [
-                                Text(
-                                  "Logout",
-                                  style: AppTextStyles.inter(
-                                    style: const TextStyle(
-                                        fontSize: 18,
-                                        fontWeight: FontWeight.bold,
-                                        color: CColors.dark),
-                                  ),
+                                CircleImageWidget(
+                                  size: screenHeight * 0.031,
                                 ),
-                                const Padding(
-                                    padding:
-                                        EdgeInsets.symmetric(horizontal: 12)),
-                                const Image(
-                                  image: AssetImage(Assets.imagesLogout),
-                                  fit: BoxFit.cover,
-                                  height: 30,
-                                  width: 30,
+                                SizedBox(
+                                  width: screenWidth * 0.03,
+                                ),
+                                Expanded(
+                                  child: Text(
+                                    "User Name",
+                                    maxLines: 2,
+                                    style: AppTextStyles.inter(
+                                      style: const TextStyle(
+                                          fontSize: 14,
+                                          fontWeight: FontWeight.bold,
+                                          color: CColors.dark),
+                                    ),
+                                  ),
                                 ),
                               ],
                             ),
                           ),
-                        ),
-                      ],
+                          Container(
+                            padding: const EdgeInsets.all(8.0),
+                            alignment: Alignment.center,
+                            child: Text(
+                              "10%",
+                              softWrap: true,
+                              maxLines: 2,
+                              style: AppTextStyles.inter(
+                                style: const TextStyle(
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.w500,
+                                    color: CColors.dark),
+                              ),
+                            ),
+                          ),
+                          Container(
+                            alignment: Alignment.center,
+                            padding: const EdgeInsets.symmetric(
+                                horizontal: 10, vertical: 15),
+                            child: Text(
+                              "৳5000",
+                              style: AppTextStyles.inter(
+                                style: const TextStyle(
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.w500,
+                                    color: CColors.dark),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
-                ],
+                ),
               ),
-            )
-          ],
+              Container(
+                width: screenWidth,
+                height: screenHeight * 0.26,
+                color: CColors.white75,
+                alignment: Alignment.bottomCenter,
+                child: Column(
+                  children: [
+                    Row(
+                      children: [
+                        myContainer(
+                          text: "Users",
+                          image: Assets.imagesUsers,
+                        ),
+                        myContainer(
+                            text: "Complains",
+                            image: Assets.imagesComplain,
+                            badgeText: "3"),
+                        myContainer(
+                            text: "Bookings",
+                            image: Assets.imagesTicket,
+                            badgeText: "10"),
+                      ],
+                    ),
+                    Expanded(
+                      child: Row(
+                        children: [
+                          Expanded(
+                            child: Container(
+                              decoration: BoxDecoration(
+                                border: Border.all(
+                                    color: CColors.seaGreen, width: 1.0),
+                              ),
+                              alignment: Alignment.center,
+                              child: Text(
+                                "Packages",
+                                style: AppTextStyles.inter(
+                                  style: const TextStyle(
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.bold,
+                                      color: CColors.dark),
+                                ),
+                              ),
+                            ),
+                          ),
+                          Expanded(
+                            child: Container(
+                              alignment: Alignment.center,
+                              decoration: BoxDecoration(
+                                border: Border.all(
+                                    color: CColors.seaGreen, width: 1.0),
+                              ),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Text(
+                                    "Logout",
+                                    style: AppTextStyles.inter(
+                                      style: const TextStyle(
+                                          fontSize: 18,
+                                          fontWeight: FontWeight.bold,
+                                          color: CColors.dark),
+                                    ),
+                                  ),
+                                  const Padding(
+                                      padding:
+                                          EdgeInsets.symmetric(horizontal: 12)),
+                                  const Image(
+                                    image: AssetImage(Assets.imagesLogout),
+                                    fit: BoxFit.cover,
+                                    height: 30,
+                                    width: 30,
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );

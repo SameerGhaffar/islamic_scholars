@@ -24,45 +24,46 @@ class _PackagesScreenAddState extends State<PackagesScreenAdd> {
   Widget build(BuildContext context) {
     screenWidth = MediaQuery.of(context).size.width;
 
-    return Scaffold(
-      // resizeToAvoidBottomInset: false,
-      floatingActionButtonLocation: FloatingActionButtonLocation.endDocked,
-
-      appBar: const MyAppBarWidget(
-        text: "Packages",
-        fontWeight: FontWeight.bold,
-        fontSize: 18,
+    return Container(
+      decoration: BoxDecoration(
+        gradient: Constants.skinGradient(),
       ),
+      child: Scaffold(
+        backgroundColor: Colors.transparent,
+        floatingActionButtonLocation: FloatingActionButtonLocation.endDocked,
+        appBar: const MyAppBarWidget(
+          text: "Packages",
+          fontWeight: FontWeight.bold,
+          fontSize: 18,
+        ),
 
-      floatingActionButton: FloatingActionButton(
-        backgroundColor: CColors.seaGreen,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(10),
-        ),
-        child: const Icon(Icons.add),
-        onPressed: () {},
-      ),
-
-      body: Container(
-        width: double.infinity,
-        padding: const EdgeInsets.symmetric(
-          horizontal: 10,
-          vertical: 10,
-        ),
-        decoration: BoxDecoration(
-          gradient: Constants.skinGradient(),
-        ),
-        child: ListView.builder(
-          itemBuilder: (context, index) => Align(
-            alignment: Alignment.centerLeft,
-            child: SizedBox(
-              width: screenWidth * 0.82,
-              child: PackageListTileWidget(
-                  title: packageData[index]["title"],
-                  subtitle: packageData[index]["subTitle"]),
-            ),
+        floatingActionButton: FloatingActionButton(
+          backgroundColor: CColors.seaGreen,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(10),
           ),
-          itemCount: packageData.length,
+          child: const Icon(Icons.add),
+          onPressed: () {},
+        ),
+
+        body: Container(
+          width: double.infinity,
+          padding: const EdgeInsets.symmetric(
+            horizontal: 10,
+            vertical: 10,
+          ),
+          child: ListView.builder(
+            itemBuilder: (context, index) => Align(
+              alignment: Alignment.centerLeft,
+              child: SizedBox(
+                width: screenWidth * 0.82,
+                child: PackageListTileWidget(
+                    title: packageData[index]["title"],
+                    subtitle: packageData[index]["subTitle"]),
+              ),
+            ),
+            itemCount: packageData.length,
+          ),
         ),
       ),
     );

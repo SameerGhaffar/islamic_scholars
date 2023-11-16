@@ -31,58 +31,61 @@ class _PackagesScreenAddState extends State<PackagesScreen> {
     screenWidth = MediaQuery.of(context).size.width;
     screenHeight = MediaQuery.of(context).size.height;
 
-    return Scaffold(
-      appBar: const MyAppBarWidget(
-        text: "Packages",
-        fontWeight: FontWeight.bold,
-        fontSize: 18,
+    return Container(
+      decoration: BoxDecoration(
+        gradient: Constants.skinGradient(),
       ),
-      body: Container(
-        width: double.infinity,
-        padding: const EdgeInsets.symmetric(
-          horizontal: 10,
-          vertical: 10,
+      child: Scaffold(
+        backgroundColor: Colors.transparent,
+        appBar: const MyAppBarWidget(
+          text: "Packages",
+          fontWeight: FontWeight.bold,
+          fontSize: 18,
         ),
-        decoration: BoxDecoration(
-          gradient: Constants.skinGradient(),
-        ),
-        child: SafeArea(
-          child: Column(
-            children: [
-              const Padding(
-                  padding: EdgeInsets.all(12),
-                  child: Text(
-                    "Select a package",
-                    style: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.w600,
-                        color: CColors.dark),
-                  )),
-              Expanded(
-                child: ListView.builder(
-                  itemBuilder: (context, index) => PackageListTileWidget(
-                      title: packageData[index]["title"],
-                      subtitle: packageData[index]["subTitle"],
-                    color: (selectedIndex != null && selectedIndex == index) ? CColors.blue : null,
+        body: Container(
+          width: double.infinity,
+          padding: const EdgeInsets.symmetric(
+            horizontal: 10,
+            vertical: 10,
+          ),
+          child: SafeArea(
+            child: Column(
+              children: [
+                const Padding(
+                    padding: EdgeInsets.all(12),
+                    child: Text(
+                      "Select a package",
+                      style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.w600,
+                          color: CColors.dark),
+                    )),
+                Expanded(
+                  child: ListView.builder(
+                    itemBuilder: (context, index) => PackageListTileWidget(
+                        title: packageData[index]["title"],
+                        subtitle: packageData[index]["subTitle"],
+                      color: (selectedIndex != null && selectedIndex == index) ? CColors.blue : null,
 
-                    onTap: () {
-                      selectedIndex = index;
-                      setState(() {
-                      });
-                    },
+                      onTap: () {
+                        selectedIndex = index;
+                        setState(() {
+                        });
+                      },
+                    ),
+                    itemCount: packageData.length,
                   ),
-                  itemCount: packageData.length,
                 ),
-              ),
-              BasicButtonWidget(
-                height: screenHeight,
-                width: screenWidth,
-                text: "CONTINUE",
-                onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => CallingScreen(),));
-                },
-              ),
-            ],
+                BasicButtonWidget(
+                  height: screenHeight,
+                  width: screenWidth,
+                  text: "CONTINUE",
+                  onPressed: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => CallingScreen(),));
+                  },
+                ),
+              ],
+            ),
           ),
         ),
       ),

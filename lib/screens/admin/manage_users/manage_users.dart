@@ -24,19 +24,20 @@ class _ManageUsersScreenState extends State<ManageUsersScreen> {
 
     return DefaultTabController(
       length: 2,
-      child: Scaffold(
-        appBar: MyAppBarWidget(
-          text: "Manage Users",
-          fontWeight: FontWeight.bold,
-          fontSize: 18,
-          elevation: 0.0,
-          bgColor: CColors.white75,
+      child: Container(
+        decoration: BoxDecoration(
+          gradient: Constants.skinGradient(),
         ),
-        body: Container(
-          decoration: BoxDecoration(
-            gradient: Constants.skinGradient(),
+        child: Scaffold(
+          backgroundColor: Colors.transparent,
+          appBar: MyAppBarWidget(
+            text: "Manage Users",
+            fontWeight: FontWeight.bold,
+            fontSize: 18,
+            elevation: 0.0,
+            bgColor: CColors.white75,
           ),
-          child: Column(
+          body: Column(
             children: [
               Container(
                 height: screenHeight * 0.0644,
