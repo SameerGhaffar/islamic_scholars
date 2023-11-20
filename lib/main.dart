@@ -13,6 +13,7 @@ import 'package:islamic_scholars/screens/auth/reset_password.dart';
 import 'package:islamic_scholars/screens/auth/signup.dart';
 import 'package:islamic_scholars/screens/admin/appointmnets.dart';
 
+import 'screens/admin/home/admin_home.dart';
 import 'screens/package_screen.dart';
 
 void main() {
@@ -46,8 +47,8 @@ class MyApp extends StatelessWidget {
       ),
       locale: DevicePreview.locale(context),
       builder: DevicePreview.appBuilder,
-      home:  ComplainsScreen2(),
-      //home: SignupScreen(),
+      home:  AdminHomeScreen(),
+
     );
   }
 }

@@ -13,6 +13,7 @@ class MyAppBarWidget extends StatelessWidget implements PreferredSizeWidget {
     this.elevation,
     this.bottom,
     this.actions,
+    this.centerTitle,
   });
 
   final Color? bgColor;
@@ -24,6 +25,7 @@ class MyAppBarWidget extends StatelessWidget implements PreferredSizeWidget {
   final double? elevation;
   final PreferredSizeWidget? bottom;
   final List<Widget>? actions;
+  final bool? centerTitle;
 
   @override
   Widget build(BuildContext context) {
@@ -40,7 +42,7 @@ class MyAppBarWidget extends StatelessWidget implements PreferredSizeWidget {
             fontWeight: fontWeight,
             color: textColor ?? CColors.dark),
       ),
-      centerTitle: true,
+      centerTitle: centerTitle ?? true,
       backgroundColor: bgColor ?? Theme.of(context).scaffoldBackgroundColor,
       elevation: elevation ?? 3,
     );

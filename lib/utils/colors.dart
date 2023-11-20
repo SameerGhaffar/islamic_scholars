@@ -14,6 +14,7 @@ class CColors {
   static const blue = Color(0xff0A588C);
   static const red = Color(0xffFF0000);
   static const seaGreen = Color(0xff57ADAC);
+  static const grey = Color(0xffD9D9D9);
   static const skinColor = Color(0xffDBC8B1);
   static const skinColordark = Color(0xffDEB99D);
 

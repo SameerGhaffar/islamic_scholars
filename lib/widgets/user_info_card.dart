@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:islamic_scholars/generated/assets.dart';
 import 'package:islamic_scholars/utils/colors.dart';
 import 'package:islamic_scholars/utils/constants.dart';
 import 'package:islamic_scholars/widgets/circle_image_widget.dart';
@@ -11,12 +12,15 @@ class UserInfoCard extends StatelessWidget {
     required this.name,
     required this.email,
     required this.number,
-
+    this.isEdit,
+    this.onTap,
   });
 
   final String name;
   final String email;
   final String number;
+  final bool? isEdit;
+  final void Function()? onTap;
 
   @override
   Widget build(BuildContext context) {
@@ -60,6 +64,17 @@ class UserInfoCard extends StatelessWidget {
               ),
             ],
           ),
+          Spacer(),
+          isEdit != null
+              ? InkWell(
+                  onTap: () => onTap,
+                  child: const Image(
+                    image: AssetImage(Assets.imagesEditSquare),
+                    width: 54,
+                    height: 60,
+                  ),
+                )
+              : Container(),
         ],
       ),
     );
