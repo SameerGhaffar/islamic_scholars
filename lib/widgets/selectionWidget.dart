@@ -32,8 +32,8 @@ class SelectionWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: height * 0.0644,
-      width: width * 0.4279,
+      height: hPercent != null ? (height * hPercent!) : height * 0.0644,
+      width: wPercent != null ? (width * wPercent!) : width * 0.4279,
       padding: const EdgeInsets.only(left: 10),
       decoration: BoxDecoration(
         color: Colors.white,

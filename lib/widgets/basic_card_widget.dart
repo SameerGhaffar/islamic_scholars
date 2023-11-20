@@ -78,7 +78,7 @@ class BasicCardWidget extends StatelessWidget {
                       width: 30,
                     ),
                   )
-                : widget!,
+                : widget ?? Container(),
           ],
         ),
       ),

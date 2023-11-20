@@ -10,6 +10,9 @@ import 'package:islamic_scholars/screens/auth/forget_password.dart';
 import 'package:islamic_scholars/screens/auth/login.dart';
 import 'package:islamic_scholars/screens/auth/reset_password.dart';
 import 'package:islamic_scholars/screens/auth/signup.dart';
+import 'package:islamic_scholars/screens/cutomer/appointmnets.dart';
+import 'package:islamic_scholars/screens/cutomer/bookings.dart';
+import 'package:islamic_scholars/screens/cutomer/complains.dart';
 
 import 'screens/package_screen.dart';
 
@@ -44,7 +47,7 @@ class MyApp extends StatelessWidget {
       ),
       locale: DevicePreview.locale(context),
       builder: DevicePreview.appBuilder,
-      home:  AdminScreen(),
+      home:  AppointmentScreen(),
       //home: SignupScreen(),
     );
   }
