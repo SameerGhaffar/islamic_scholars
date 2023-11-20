@@ -10,6 +10,7 @@ class Assets {
   static const String imagesComplain = 'assets/images/Complain.png';
   static const String imagesEmail = 'assets/images/Email.png';
   static const String imagesFilter = 'assets/images/Filter.png';
+  static const String imagesImageFile = 'assets/images/ImageFile.png';
   static const String imagesLock = 'assets/images/lock.png';
   static const String imagesLogout = 'assets/images/Logout.png';
   static const String imagesMainlogo = 'assets/images/mainlogo.png';

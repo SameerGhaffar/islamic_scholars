@@ -2,6 +2,7 @@ import 'package:device_preview/device_preview.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:islamic_scholars/screens/admin/complains_2.dart';
 import 'package:islamic_scholars/screens/admin/admin.dart';
 import 'package:islamic_scholars/screens/admin/manage_users/manage_users.dart';
 import 'package:islamic_scholars/screens/admin/package_add.dart';
@@ -10,9 +11,7 @@ import 'package:islamic_scholars/screens/auth/forget_password.dart';
 import 'package:islamic_scholars/screens/auth/login.dart';
 import 'package:islamic_scholars/screens/auth/reset_password.dart';
 import 'package:islamic_scholars/screens/auth/signup.dart';
-import 'package:islamic_scholars/screens/cutomer/appointmnets.dart';
-import 'package:islamic_scholars/screens/cutomer/bookings.dart';
-import 'package:islamic_scholars/screens/cutomer/complains.dart';
+import 'package:islamic_scholars/screens/admin/appointmnets.dart';
 
 import 'screens/package_screen.dart';
 
@@ -47,7 +46,7 @@ class MyApp extends StatelessWidget {
       ),
       locale: DevicePreview.locale(context),
       builder: DevicePreview.appBuilder,
-      home:  AppointmentScreen(),
+      home:  ComplainsScreen2(),
       //home: SignupScreen(),
     );
   }

@@ -2,17 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:islamic_scholars/utils/colors.dart';
 
 class MyAppBarWidget extends StatelessWidget implements PreferredSizeWidget {
-  const MyAppBarWidget(
-      {super.key,
-      required this.text,
-      this.bgColor,
-      this.textColor,
-      this.fontWeight,
-      this.fontSize,
-      this.iconColor,
-      this.elevation,
-        this.bottom
-      });
+  const MyAppBarWidget({
+    super.key,
+    required this.text,
+    this.bgColor,
+    this.textColor,
+    this.fontWeight,
+    this.fontSize,
+    this.iconColor,
+    this.elevation,
+    this.bottom,
+    this.actions,
+  });
 
   final Color? bgColor;
   final String text;
@@ -22,11 +23,13 @@ class MyAppBarWidget extends StatelessWidget implements PreferredSizeWidget {
   final FontWeight? fontWeight;
   final double? elevation;
   final PreferredSizeWidget? bottom;
+  final List<Widget>? actions;
 
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      bottom:bottom ,
+      bottom: bottom,
+      actions: actions,
       iconTheme: IconThemeData(
         color: iconColor ?? CColors.blue,
       ),
