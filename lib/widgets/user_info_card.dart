@@ -6,7 +6,17 @@ import 'package:islamic_scholars/widgets/circle_image_widget.dart';
 import 'template_box.dart';
 
 class UserInfoCard extends StatelessWidget {
-  const UserInfoCard({super.key});
+  const UserInfoCard({
+    super.key,
+    required this.name,
+    required this.email,
+    required this.number,
+
+  });
+
+  final String name;
+  final String email;
+  final String number;
 
   @override
   Widget build(BuildContext context) {
@@ -14,35 +24,37 @@ class UserInfoCard extends StatelessWidget {
     return TemplateBox(
       bgColor: Colors.transparent,
       borderColor: Colors.transparent,
-      widget:Row(
+      widget: Row(
         children: [
-          CircleImageWidget(size: screenHeight * 0.1086,networkImage: Constants.networkImage),
+          CircleImageWidget(
+              size: screenHeight * 0.1086,
+              networkImage: Constants.networkImage),
           const Padding(padding: EdgeInsets.only(right: 15)),
-          const Column(
+          Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                "User Name",
-                style: TextStyle(
+                name,
+                style: const TextStyle(
                   fontSize: 22,
                   fontWeight: FontWeight.w600,
-                  color: CColors.dark,
+                  color: CColors.blue,
                 ),
               ),
               Text(
-                "email@email.com",
-                style: TextStyle(
+                email,
+                style: const TextStyle(
                   fontSize: 16,
                   fontWeight: FontWeight.w400,
                   color: CColors.dark,
                 ),
               ),
               Text(
-                "+1234567890",
-                style: TextStyle(
+                number,
+                style: const TextStyle(
                   fontSize: 16,
-                  fontWeight: FontWeight.bold,
+                  fontWeight: FontWeight.w400,
                   color: CColors.dark,
                 ),
               ),
