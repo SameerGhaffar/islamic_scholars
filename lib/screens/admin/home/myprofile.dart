@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:islamic_scholars/generated/assets.dart';
 import 'package:islamic_scholars/utils/colors.dart';
+import 'package:islamic_scholars/widgets/add_dialog_box.dart';
 import 'package:islamic_scholars/widgets/basic_card_widget.dart';
+import 'package:islamic_scholars/widgets/update_dialog_box.dart';
 import 'package:islamic_scholars/widgets/user_info_card.dart';
 
 class AdminMyProfile extends StatelessWidget {
@@ -18,11 +20,16 @@ class AdminMyProfile extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
       child: Column(
         children: [
-          const UserInfoCard(
+           UserInfoCard(
               name: 'User Name',
               number: "+1234567890",
               email: "email@email.com",
-              isEdit: true),
+              isEdit: true,
+               onTap:(){
+                 //showDialog(context: context, builder: (context) => UpdateDialogBox());
+                 showDialog(context: context, builder:(_)=> AddDialogBox());
+               }
+          ),
           const Padding(
             padding: EdgeInsets.only(
               bottom: 40,
@@ -75,6 +82,8 @@ class AdminMyProfile extends StatelessWidget {
                           ),
                           Text(
                             "upholding Islamic principles and promoting peace and understanding.",
+                            softWrap: true,
+                            overflow: TextOverflow.fade,
                             style: TextStyle(
                               fontSize: 14,
                               fontWeight: FontWeight.w400,
@@ -87,7 +96,7 @@ class AdminMyProfile extends StatelessWidget {
                     Icon(
                       Icons.delete,
                       color: CColors.red,
-                      size: 30,
+                      size: 27,
                     )
                   ],
                 ),
@@ -126,7 +135,7 @@ class AdminMyProfile extends StatelessWidget {
                     Icon(
                       Icons.delete,
                       color: CColors.red,
-                      size: 30,
+                      size: 27,
                     )
                   ],
                 ),

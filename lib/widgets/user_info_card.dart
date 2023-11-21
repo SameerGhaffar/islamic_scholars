@@ -67,7 +67,7 @@ class UserInfoCard extends StatelessWidget {
           Spacer(),
           isEdit != null
               ? InkWell(
-                  onTap: () => onTap,
+                  onTap: () => onTap!(),
                   child: const Image(
                     image: AssetImage(Assets.imagesEditSquare),
                     width: 54,

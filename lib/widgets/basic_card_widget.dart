@@ -74,8 +74,8 @@ class BasicCardWidget extends StatelessWidget {
                     child: Image(
                       image: AssetImage(asset!),
                       fit: BoxFit.cover,
-                      height: 30,
-                      width: 30,
+                      height: 25,
+                      width: 25,
                     ),
                   )
                 : widget ?? Container(),

@@ -108,47 +108,18 @@ class AdminAppointments extends StatelessWidget {
                 ),
               ),
               Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  Row(
-                    children: [
-                      Icon(
-                        Icons.person,
-                        color: isGrey ? Colors.grey : CColors.blue,
-                      ),
-                      Text(
-                        "Hassan Ali",
-                        style: TextStyle(
-                          fontSize: 14,
-                          fontWeight: FontWeight.w400,
-                          color: isGrey ? Colors.grey : CColors.blue,
-                        ),
-                      ),
-                    ],
+                  Icon(
+                    Icons.person,
+                    color: isGrey ? Colors.grey : CColors.blue,
                   ),
-                  const Text(
-                    "  - ",
+                  Text(
+                    "Hassan Ali",
                     style: TextStyle(
-                      fontSize: 16,
+                      fontSize: 14,
                       fontWeight: FontWeight.w400,
-                      color: CColors.blue,
+                      color: isGrey ? Colors.grey : CColors.blue,
                     ),
-                  ),
-                  Row(
-                    children: [
-                      Icon(
-                        Icons.person,
-                        color: isGrey ? Colors.grey : CColors.blue,
-                      ),
-                      Text(
-                        "Mufti Mujeeb",
-                        style: TextStyle(
-                          fontSize: 14,
-                          fontWeight: FontWeight.w400,
-                          color: isGrey ? Colors.grey : CColors.blue,
-                        ),
-                      ),
-                    ],
                   ),
                 ],
               )
