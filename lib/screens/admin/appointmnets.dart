@@ -2,22 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:islamic_scholars/utils/colors.dart';
 import 'package:islamic_scholars/utils/constants.dart';
 import 'package:islamic_scholars/widgets/appbar_widget.dart';
-import 'package:islamic_scholars/widgets/basic_card_widget.dart';
 import 'package:islamic_scholars/widgets/button_widget.dart';
-import 'package:islamic_scholars/widgets/circle_image_widget.dart';
-import 'package:islamic_scholars/widgets/template_box.dart';
 import 'package:islamic_scholars/widgets/user_info_card.dart';
 
 class AppointmentScreen extends StatelessWidget {
-  AppointmentScreen({super.key});
-
-  late double screenWidth;
-  late double screenHeight;
+  const AppointmentScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    screenWidth = MediaQuery.of(context).size.width;
-    screenHeight = MediaQuery.of(context).size.height;
+    double screenWidth = MediaQuery.of(context).size.width;
+    double screenHeight = MediaQuery.of(context).size.height;
     return Container(
       decoration: BoxDecoration(
         gradient: Constants.skinGradient(),
@@ -32,7 +26,7 @@ class AppointmentScreen extends StatelessWidget {
         body: Container(
           width: screenWidth,
           padding: const EdgeInsets.all(12),
-          child:  Column(
+          child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
@@ -44,7 +38,11 @@ class AppointmentScreen extends StatelessWidget {
                   color: CColors.dark,
                 ),
               ),
-              const UserInfoCard(name: "User Name",email: "email@email.com",number: "+1234567890"),
+              const UserInfoCard(
+                name: "User Name",
+                email: "email@email.com",
+                number: "+1234567890",
+              ),
               const Text(
                 "Scholar Details",
                 style: TextStyle(
@@ -53,7 +51,11 @@ class AppointmentScreen extends StatelessWidget {
                   color: CColors.dark,
                 ),
               ),
-              const UserInfoCard(name: "User Name",email: "email@email.com",number: "+1234567890"),
+              const UserInfoCard(
+                name: "User Name",
+                email: "email@email.com",
+                number: "+1234567890",
+              ),
               const Text(
                 "Appointment Details",
                 style: TextStyle(
@@ -158,7 +160,11 @@ class AppointmentScreen extends StatelessWidget {
                   ],
                 ),
               ),
-              BasicButtonWidget(height: screenHeight,width: screenWidth,text: "Cancel Booking"),
+              BasicButtonWidget(
+                height: screenHeight,
+                width: screenWidth,
+                text: "Cancel Booking",
+              ),
             ],
           ),
         ),

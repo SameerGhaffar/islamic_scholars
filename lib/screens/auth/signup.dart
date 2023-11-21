@@ -47,6 +47,7 @@ class _SignupScreenState extends State<SignupScreen> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     CircleImageWidget(size: screenHeight * 0.17, isUpload: true),
+                    const Padding(padding: EdgeInsets.only(bottom: 10)),
                     TextFieldWidget(
                       controller: controller,
                       hint: " Name",
@@ -67,12 +68,14 @@ class _SignupScreenState extends State<SignupScreen> {
                       controller: controller,
                       hint: " Confirm Password",
                     ),
+                    const Padding(padding: EdgeInsets.only(bottom: 10)),
                     BasicButtonWidget(
                       height: screenHeight,
                       width: screenWidth,
-                      text: "SIGNUP",
+                      text: "SIGN UP",
                       onPressed: () {},
                     ),
+                    const Padding(padding: EdgeInsets.only(bottom: 10)),
                     RichText(
                       text: TextSpan(
                         children: [
@@ -86,6 +89,7 @@ class _SignupScreenState extends State<SignupScreen> {
                               ),
                             ),
                           ),
+                          
                           TextSpan(
                             text: " Sign In",
                             recognizer: TapGestureRecognizer()

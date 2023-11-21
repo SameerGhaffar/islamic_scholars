@@ -12,6 +12,7 @@ class TemplateBox extends StatelessWidget {
     this.borderWidth,
     this.bgColor,
     this.widget,
+    this.constraints
   });
 
   final double? height;
@@ -22,12 +23,14 @@ class TemplateBox extends StatelessWidget {
   final Color? borderColor;
   final double? borderWidth;
   final Widget? widget;
+  final BoxConstraints? constraints;
 
   @override
   Widget build(BuildContext context) {
     return Container(
       height: hPercent != null ? (height! * hPercent!) : height,
       width: wPercent != null ? (width! * wPercent!) : width,
+      constraints:constraints ,
 
       decoration: BoxDecoration(
         color: bgColor ?? Colors.white,

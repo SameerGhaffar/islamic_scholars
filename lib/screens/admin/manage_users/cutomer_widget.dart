@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:islamic_scholars/generated/assets.dart';
 import 'package:islamic_scholars/model/customer_model.dart';
 import 'package:islamic_scholars/utils/colors.dart';
+import 'package:islamic_scholars/utils/constants.dart';
 import 'package:islamic_scholars/utils/text_style.dart';
 import 'package:islamic_scholars/widgets/text_field_widget.dart';
 import 'package:islamic_scholars/widgets/user_card_widget.dart';
@@ -35,7 +36,10 @@ class _CustomerWidgetState extends State<CustomerWidget> {
       child: Column(
         children: [
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 8.0),
+            padding: const EdgeInsets.symmetric(
+              horizontal: 8.0,
+              vertical: 8.0,
+            ),
             child: Row(
               children: [
                 SizedBox(
@@ -55,7 +59,9 @@ class _CustomerWidgetState extends State<CustomerWidget> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(left: 8.0),
+                  padding: const EdgeInsets.only(
+                    left: 8.0,
+                  ),
                   child: Container(
                     height: widget.screenHeight * 0.0644,
                     width: widget.screenWidth * 0.24,
@@ -81,7 +87,9 @@ class _CustomerWidgetState extends State<CustomerWidget> {
                               ),
                             ],
                             icon: const Image(
-                              image: AssetImage(Assets.imagesFilter),
+                              image: AssetImage(
+                                Assets.imagesFilter,
+                              ),
                             ),
                             onSelected: (value) {
                               setState(() {
@@ -94,10 +102,12 @@ class _CustomerWidgetState extends State<CustomerWidget> {
                           child: Text(
                             option[optionIndex],
                             style: AppTextStyles.inter(
-                                style: const TextStyle(
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.w600,
-                                    color: CColors.blue)),
+                              style: const TextStyle(
+                                fontSize: 16,
+                                fontWeight: FontWeight.w600,
+                                color: CColors.blue,
+                              ),
+                            ),
                           ),
                         ),
                       ],
@@ -118,17 +128,16 @@ class _CustomerWidgetState extends State<CustomerWidget> {
                   asset: Assets.imagesArrowRight,
                   width: widget.screenWidth,
                   height: widget.screenHeight,
-                  networkImage:
-                      "https://play-lh.googleusercontent.com/C9CAt9tZr8SSi4zKCxhQc9v4I6AOTqRmnLchsu1wVDQL0gsQ3fmbCVgQmOVM1zPru8UH=w240-h480-rw",
+                  networkImage: Constants.networkImage,
                   isBlock: customers[index].isBlock,
                   onBlock: () {
-                    print("User at $index blocked");
+                    //print("User at $index blocked");
                   },
                   onDelete: () {
-                    print("User at $index deleted");
+                    // print("User at $index deleted");
                   },
                   onUnblock: () {
-                    print("User at $index Unblocked");
+                    // print("User at $index Unblocked");
                   },
                 ),
               ),

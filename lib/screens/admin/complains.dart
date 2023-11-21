@@ -6,15 +6,12 @@ import 'package:islamic_scholars/widgets/selectionWidget.dart';
 import 'package:islamic_scholars/widgets/template_box.dart';
 
 class ComplainsScreen extends StatelessWidget {
-  ComplainsScreen({super.key});
-
-  late double screenWidth;
-  late double screenHeight;
+  const ComplainsScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    screenWidth = MediaQuery.of(context).size.width;
-    screenHeight = MediaQuery.of(context).size.height;
+    double screenWidth = MediaQuery.of(context).size.width;
+    double screenHeight = MediaQuery.of(context).size.height;
     int selectedIndex = 0;
     return Container(
       decoration: BoxDecoration(
@@ -44,7 +41,7 @@ class ComplainsScreen extends StatelessWidget {
                     onSelected: (value) {
                       selectedIndex = value;
                     },
-                    options: ["Pending", "Rejected"],
+                    options: const ["Pending", "Rejected"],
                     selectedIndex: selectedIndex,
                   ),
                 ),
@@ -68,16 +65,21 @@ class ComplainsScreen extends StatelessWidget {
                             Text(
                               "Scholar did not show up on time",
                               style: TextStyle(
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.w600,
-                                  color: CColors.dark,
-                                  height: 0.8),
+                                fontSize: 16,
+                                fontWeight: FontWeight.w600,
+                                color: CColors.dark,
+                                height: 0.8,
+                              ),
                             ),
                             Row(
                               children: [
                                 Icon(
                                   Icons.person,
                                   color: CColors.blue,
+                                  size: 20,
+                                ),
+                                SizedBox(
+                                  width: 2,
                                 ),
                                 Text(
                                   "Hassan Ali",
@@ -91,7 +93,7 @@ class ComplainsScreen extends StatelessWidget {
                             ),
                             Text(
                               "10:30 AM - May 25, 2023",
-                              style:TextStyle(
+                              style: TextStyle(
                                 fontSize: 12,
                                 fontWeight: FontWeight.w400,
                                 color: CColors.dark,

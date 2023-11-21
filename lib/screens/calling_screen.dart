@@ -6,15 +6,14 @@ import 'package:islamic_scholars/utils/text_style.dart';
 import 'package:islamic_scholars/widgets/circle_image_widget.dart';
 
 class CallingScreen extends StatelessWidget {
-  CallingScreen({super.key});
+  const CallingScreen({super.key});
 
-  late double screenWidth;
-  late double screenHeight;
+
 
   @override
   Widget build(BuildContext context) {
-    screenWidth = MediaQuery.of(context).size.width;
-    screenHeight = MediaQuery.of(context).size.height;
+    double screenWidth = MediaQuery.of(context).size.width;
+    double screenHeight = MediaQuery.of(context).size.height;
 
     return Scaffold(
       // appBar: AppBar(
@@ -58,9 +57,8 @@ class CallingScreen extends StatelessWidget {
             const Spacer(),
             CircleImageWidget(
               size: screenHeight * 0.257,
-              networkImage:
-                  "https://media.istockphoto.com/id/1189728361/photo/little-boy-smiling-against-a-gray-studio-background.jpg?s=612x612&w=0&k=20&c=PA3DKZcek_ZCjs_AQJss7c9THcmS_pVE49PXCRehZSk=",
-            ),
+              networkImage:Constants.networkImage
+                      ),
             const Spacer(),
             Container(
               width: screenWidth,

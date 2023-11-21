@@ -3,14 +3,13 @@ import 'package:islamic_scholars/generated/assets.dart';
 import 'package:islamic_scholars/utils/colors.dart';
 import 'package:islamic_scholars/utils/constants.dart';
 import 'package:islamic_scholars/utils/text_style.dart';
-import 'package:islamic_scholars/widgets/appbar_widget.dart';
 import 'package:islamic_scholars/widgets/basic_card_widget.dart';
 import 'package:islamic_scholars/widgets/button_widget.dart';
 import 'package:islamic_scholars/widgets/circle_image_widget.dart';
 import 'package:islamic_scholars/widgets/selectionWidget.dart';
 
 class UserInfoScreen extends StatefulWidget {
-  UserInfoScreen({super.key});
+  const UserInfoScreen({super.key});
 
   @override
   State<UserInfoScreen> createState() => _UserInfoScreenState();
@@ -64,7 +63,7 @@ class _UserInfoScreenState extends State<UserInfoScreen> {
                         ),
                       ),
                       Text(
-                        "User Name",
+                        "email@email.com",
                         style: AppTextStyles.inter(
                           style: const TextStyle(
                             fontSize: 14,
@@ -109,7 +108,7 @@ class _UserInfoScreenState extends State<UserInfoScreen> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            "Qualification",
+                            "Passionate about",
                             style: AppTextStyles.inter(
                               style: const TextStyle(
                                 fontSize: 14,
@@ -133,7 +132,7 @@ class _UserInfoScreenState extends State<UserInfoScreen> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            "Qualification",
+                            "Passionate about",
                             style: AppTextStyles.inter(
                               style: const TextStyle(
                                 fontSize: 14,
@@ -190,13 +189,7 @@ class _UserInfoScreenState extends State<UserInfoScreen> {
                         ),
                       ],
                     ),
-                    BasicCardWidget(
-                      height: screenHeight,
-                      hPercent: 0.0579,
-                      width: screenWidth,
-                      asset: Assets.imagesArrowRight,
-                      text: "View Earnings",
-                    ),
+                    const SizedBox(height: 2,),
                     BasicCardWidget(
                       height: screenHeight,
                       width: screenWidth,
@@ -206,15 +199,22 @@ class _UserInfoScreenState extends State<UserInfoScreen> {
                       widget: SelectionWidget(
                         height: screenHeight,
                         width: screenWidth,
-                        options: ["Scholars", "Customer"],
+                        options: const ["Scholar", "Customer"],
                         selectedIndex: selectedIndex,
                         onSelected: (value) {
                           setState(() {
                             selectedIndex = value;
-                            print(value);
+                            //print(value);
                           });
                         },
                       ),
+                    ),
+                    BasicCardWidget(
+                      height: screenHeight,
+                      hPercent: 0.0579,
+                      width: screenWidth,
+                      asset: Assets.imagesArrowRight,
+                      text: "View Earnings",
                     ),
                     BasicCardWidget(
                       height: screenHeight,

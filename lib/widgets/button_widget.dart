@@ -39,7 +39,7 @@ class BasicButtonWidget extends StatelessWidget {
         ],
       ),
       height: hPercent != null ? height * hPercent! : height * 0.06,
-      width: width != null ? (width! * 0.80)  : null,
+      width: width != null ? (width! * 0.80) : null,
       child: ElevatedButton(
         onPressed: onPressed,
         style: ButtonStyle(
@@ -47,10 +47,11 @@ class BasicButtonWidget extends StatelessWidget {
 
           backgroundColor: MaterialStateProperty.all(color ?? CColors.seaGreen),
           shape: MaterialStateProperty.all(
-             RoundedRectangleBorder(
+            RoundedRectangleBorder(
               borderRadius: const BorderRadius.all(Radius.circular(10)),
-              side: borderColor != null ?  BorderSide(color: borderColor! ) : BorderSide.none,
-
+              side: borderColor != null
+                  ? BorderSide(color: borderColor!)
+                  : BorderSide.none,
             ),
           ),
           //foregroundColor: MaterialStateProperty.all(Colors.white),
@@ -58,7 +59,7 @@ class BasicButtonWidget extends StatelessWidget {
         child: Text(
           text,
           style: AppTextStyles.inter(
-              style:  TextStyle(fontSize: 18, color: textColor ?? Colors.white)),
+              style: TextStyle(fontSize: 18, color: textColor ?? Colors.white)),
         ),
       ),
     );

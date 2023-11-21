@@ -6,15 +6,12 @@ import 'package:islamic_scholars/utils/text_style.dart';
 import 'package:islamic_scholars/widgets/circle_image_widget.dart';
 
 class AdminScreen extends StatelessWidget {
-  AdminScreen({super.key});
-
-  late double screenWidth;
-  late double screenHeight;
+  const AdminScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    screenWidth = MediaQuery.of(context).size.width;
-    screenHeight = MediaQuery.of(context).size.height;
+    double screenWidth = MediaQuery.of(context).size.width;
+    double screenHeight = MediaQuery.of(context).size.height;
 
     return Container(
       decoration: BoxDecoration(
@@ -36,7 +33,6 @@ class AdminScreen extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-
                     Text(
                       "Scholars",
                       style: AppTextStyles.inter(
@@ -46,24 +42,29 @@ class AdminScreen extends StatelessWidget {
                             color: CColors.dark),
                       ),
                     ),
-                    const Padding(padding: EdgeInsets.only(left: 6)),
-
+                    const Padding(
+                      padding: EdgeInsets.only(
+                        left: 6,
+                      ),
+                    ),
                     Text(
                       "Commissions",
                       style: AppTextStyles.inter(
                         style: const TextStyle(
-                            fontSize: 14,
-                            fontWeight: FontWeight.bold,
-                            color: CColors.dark),
+                          fontSize: 14,
+                          fontWeight: FontWeight.bold,
+                          color: CColors.dark,
+                        ),
                       ),
                     ),
                     Text(
                       "Earnings",
                       style: AppTextStyles.inter(
                         style: const TextStyle(
-                            fontSize: 14,
-                            fontWeight: FontWeight.bold,
-                            color: CColors.dark),
+                          fontSize: 14,
+                          fontWeight: FontWeight.bold,
+                          color: CColors.dark,
+                        ),
                       ),
                     ),
                   ],
@@ -81,7 +82,8 @@ class AdminScreen extends StatelessWidget {
                     },
                     border: TableBorder.symmetric(
                       inside: const BorderSide(width: 1.0, color: Colors.black),
-                      outside: const BorderSide(width: 1.0, color: Colors.black),
+                      outside:
+                          const BorderSide(width: 1.0, color: Colors.black),
                     ),
                     children: List.generate(
                       4,
@@ -95,6 +97,7 @@ class AdminScreen extends StatelessWidget {
                               children: [
                                 CircleImageWidget(
                                   size: screenHeight * 0.031,
+                                  networkImage: Constants.networkImage,
                                 ),
                                 SizedBox(
                                   width: screenWidth * 0.03,
@@ -105,9 +108,10 @@ class AdminScreen extends StatelessWidget {
                                     maxLines: 2,
                                     style: AppTextStyles.inter(
                                       style: const TextStyle(
-                                          fontSize: 14,
-                                          fontWeight: FontWeight.bold,
-                                          color: CColors.dark),
+                                        fontSize: 14,
+                                        fontWeight: FontWeight.bold,
+                                        color: CColors.dark,
+                                      ),
                                     ),
                                   ),
                                 ),
@@ -123,23 +127,27 @@ class AdminScreen extends StatelessWidget {
                               maxLines: 2,
                               style: AppTextStyles.inter(
                                 style: const TextStyle(
-                                    fontSize: 12,
-                                    fontWeight: FontWeight.w500,
-                                    color: CColors.dark),
+                                  fontSize: 12,
+                                  fontWeight: FontWeight.w500,
+                                  color: CColors.dark,
+                                ),
                               ),
                             ),
                           ),
                           Container(
                             alignment: Alignment.center,
                             padding: const EdgeInsets.symmetric(
-                                horizontal: 10, vertical: 15),
+                              horizontal: 10,
+                              vertical: 15,
+                            ),
                             child: Text(
                               "৳5000",
                               style: AppTextStyles.inter(
                                 style: const TextStyle(
-                                    fontSize: 12,
-                                    fontWeight: FontWeight.w500,
-                                    color: CColors.dark),
+                                  fontSize: 12,
+                                  fontWeight: FontWeight.w500,
+                                  color: CColors.dark,
+                                ),
                               ),
                             ),
                           ),
@@ -161,15 +169,23 @@ class AdminScreen extends StatelessWidget {
                         myContainer(
                           text: "Users",
                           image: Assets.imagesUsers,
+                          screenHeight: screenHeight,
+                          screenWidth: screenWidth,
                         ),
                         myContainer(
-                            text: "Complains",
-                            image: Assets.imagesComplain,
-                            badgeText: "3"),
+                          text: "Complains",
+                          image: Assets.imagesComplain,
+                          screenHeight: screenHeight,
+                          screenWidth: screenWidth,
+                          badgeText: "3",
+                        ),
                         myContainer(
-                            text: "Bookings",
-                            image: Assets.imagesTicket,
-                            badgeText: "10"),
+                          text: "Bookings",
+                          image: Assets.imagesTicket,
+                          screenHeight: screenHeight,
+                          screenWidth: screenWidth,
+                          badgeText: "10",
+                        ),
                       ],
                     ),
                     Expanded(
@@ -179,16 +195,19 @@ class AdminScreen extends StatelessWidget {
                             child: Container(
                               decoration: BoxDecoration(
                                 border: Border.all(
-                                    color: CColors.seaGreen, width: 1.0),
+                                  color: CColors.seaGreen,
+                                  width: 1.0,
+                                ),
                               ),
                               alignment: Alignment.center,
                               child: Text(
                                 "Packages",
                                 style: AppTextStyles.inter(
                                   style: const TextStyle(
-                                      fontSize: 18,
-                                      fontWeight: FontWeight.bold,
-                                      color: CColors.dark),
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.bold,
+                                    color: CColors.dark,
+                                  ),
                                 ),
                               ),
                             ),
@@ -198,7 +217,9 @@ class AdminScreen extends StatelessWidget {
                               alignment: Alignment.center,
                               decoration: BoxDecoration(
                                 border: Border.all(
-                                    color: CColors.seaGreen, width: 1.0),
+                                  color: CColors.seaGreen,
+                                  width: 1.0,
+                                ),
                               ),
                               child: Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
@@ -207,9 +228,10 @@ class AdminScreen extends StatelessWidget {
                                     "Logout",
                                     style: AppTextStyles.inter(
                                       style: const TextStyle(
-                                          fontSize: 18,
-                                          fontWeight: FontWeight.bold,
-                                          color: CColors.dark),
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.bold,
+                                        color: CColors.dark,
+                                      ),
                                     ),
                                   ),
                                   const Padding(
@@ -218,8 +240,8 @@ class AdminScreen extends StatelessWidget {
                                   const Image(
                                     image: AssetImage(Assets.imagesLogout),
                                     fit: BoxFit.cover,
-                                    height: 30,
-                                    width: 30,
+                                    height: 25,
+                                    width: 25,
                                   ),
                                 ],
                               ),
@@ -239,7 +261,11 @@ class AdminScreen extends StatelessWidget {
   }
 
   Widget myContainer(
-      {required String image, required String text, String? badgeText}) {
+      {required String image,
+      required String text,
+      String? badgeText,
+      required screenHeight,
+      required screenWidth}) {
     return Expanded(
       child: Container(
         height: screenHeight * 0.1534,
@@ -277,18 +303,19 @@ class AdminScreen extends StatelessWidget {
               child: Image(
                 image: AssetImage(image),
                 fit: BoxFit.cover,
-                height: screenHeight * 0.0570,
+                height: screenHeight * 0.055,
               ),
             ),
             SizedBox(
-              height: screenHeight * 0.022,
+              height: screenHeight * 0.027,
               child: Text(
                 text,
                 style: AppTextStyles.inter(
                   style: const TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                      color: CColors.blue),
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: CColors.blue,
+                  ),
                 ),
               ),
             )

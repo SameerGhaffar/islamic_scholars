@@ -68,7 +68,7 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
                             ),
                           ),
                           Text(
-                            "PASSWORD",
+                            "Password",
                             style: AppTextStyles.inter(
                               style: const TextStyle(
                                 color: CColors.dark,

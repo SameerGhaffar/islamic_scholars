@@ -1,7 +1,6 @@
 class Customer {
-
-
   Customer({required this.name, required this.isBlock});
+
   final String name;
   final bool isBlock;
 
@@ -16,7 +15,7 @@ class Customer {
   // Create a Customer object from a map
   factory Customer.fromMap(Map<String, dynamic> map) {
     return Customer(
-      name : map['name'],
+      name: map['name'],
       isBlock: map['isBlock'],
     );
   }

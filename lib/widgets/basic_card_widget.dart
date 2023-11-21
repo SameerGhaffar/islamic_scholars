@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:islamic_scholars/generated/assets.dart';
 import 'package:islamic_scholars/utils/colors.dart';
 import 'package:islamic_scholars/utils/text_style.dart';
 import 'package:islamic_scholars/widgets/circle_image_widget.dart';
-import 'package:islamic_scholars/widgets/selectionWidget.dart';
 
 class BasicCardWidget extends StatelessWidget {
   const BasicCardWidget({

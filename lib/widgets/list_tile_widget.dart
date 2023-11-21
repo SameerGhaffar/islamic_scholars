@@ -19,7 +19,7 @@ class PackageListTileWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(
-        vertical: 6,
+        vertical: 4,
       ),
       child: Container(
         padding: EdgeInsets.all(MediaQuery.of(context).size.height * 0.015),

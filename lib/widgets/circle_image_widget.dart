@@ -5,10 +5,7 @@ import 'package:islamic_scholars/utils/text_style.dart';
 
 class CircleImageWidget extends StatelessWidget {
   const CircleImageWidget(
-      {super.key,
-      required this.size,
-      this.isUpload,
-      this.networkImage});
+      {super.key, required this.size, this.isUpload, this.networkImage});
 
   final double size;
 
@@ -30,11 +27,11 @@ class CircleImageWidget extends StatelessWidget {
       ),
       child: networkImage != null
           ? ClipOval(
-            child: Image(
+              child: Image(
                 image: NetworkImage(networkImage!),
-                    fit: BoxFit.cover,
+                fit: BoxFit.cover,
               ),
-          )
+            )
           : (isUpload != null && isUpload == true)
               ? Center(
                   child: Row(

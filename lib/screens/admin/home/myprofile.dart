@@ -3,33 +3,28 @@ import 'package:islamic_scholars/generated/assets.dart';
 import 'package:islamic_scholars/utils/colors.dart';
 import 'package:islamic_scholars/widgets/add_dialog_box.dart';
 import 'package:islamic_scholars/widgets/basic_card_widget.dart';
-import 'package:islamic_scholars/widgets/update_dialog_box.dart';
 import 'package:islamic_scholars/widgets/user_info_card.dart';
 
 class AdminMyProfile extends StatelessWidget {
-  AdminMyProfile({super.key});
-
-   double? screenWidth;
-   double? screenHeight;
+  const AdminMyProfile({super.key});
 
   @override
   Widget build(BuildContext context) {
-    screenWidth = MediaQuery.of(context).size.width;
-    screenHeight = MediaQuery.of(context).size.height;
+    double screenWidth = MediaQuery.of(context).size.width;
+    double screenHeight = MediaQuery.of(context).size.height;
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
       child: Column(
         children: [
-           UserInfoCard(
+          UserInfoCard(
               name: 'User Name',
               number: "+1234567890",
               email: "email@email.com",
               isEdit: true,
-               onTap:(){
-                 //showDialog(context: context, builder: (context) => UpdateDialogBox());
-                 showDialog(context: context, builder:(_)=> AddDialogBox());
-               }
-          ),
+              onTap: () {
+                //showDialog(context: context, builder: (context) => UpdateDialogBox());
+                showDialog(context: context, builder: (_) => AddDialogBox());
+              }),
           const Padding(
             padding: EdgeInsets.only(
               bottom: 40,
@@ -40,7 +35,6 @@ class AdminMyProfile extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -54,9 +48,12 @@ class AdminMyProfile extends StatelessWidget {
                     ),
                     Padding(
                       padding: EdgeInsets.all(3.0),
-                      child: Image(image: AssetImage(Assets.imagesAdd),height: 24,width: 24,),
+                      child: Image(
+                        image: AssetImage(Assets.imagesAdd),
+                        height: 24,
+                        width: 24,
+                      ),
                     ),
-
                   ],
                 ),
                 Padding(
@@ -149,8 +146,8 @@ class AdminMyProfile extends StatelessWidget {
           ),
           const Spacer(),
           BasicCardWidget(
-            height: screenHeight!,
-            width: screenWidth!,
+            height: screenHeight,
+            width: screenWidth,
             asset: Assets.imagesLogout,
             text: "Logout",
           ),

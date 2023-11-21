@@ -1,9 +1,6 @@
-import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:islamic_scholars/utils/colors.dart';
-import 'package:islamic_scholars/utils/constants.dart';
 import 'package:islamic_scholars/widgets/button_widget.dart';
-import 'package:islamic_scholars/widgets/circle_image_widget.dart';
 import 'package:islamic_scholars/widgets/text_field_widget.dart';
 
 class AddDialogBox extends StatelessWidget {
@@ -36,12 +33,12 @@ class AddDialogBox extends StatelessWidget {
                   color: CColors.dark,
                 ),
               ),
-              Padding(padding: EdgeInsets.only(bottom: 15)),
+              const Padding(padding: EdgeInsets.only(bottom: 15)),
               TextFieldWidget(controller: controller, hint: "Start Time"),
               TextFieldWidget(controller: controller, hint: "End Time"),
               BasicButtonWidget(
                   height: screenHeight, width: double.infinity, text: "Save"),
-              Padding(padding: EdgeInsets.only(bottom: 15)),
+              const Padding(padding: EdgeInsets.only(bottom: 15)),
               const Text(
                 "DELETE",
                 style: TextStyle(

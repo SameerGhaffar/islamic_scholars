@@ -75,7 +75,7 @@ class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
                             ),
                           ),
                           Text(
-                            "PASSWORD",
+                            "Password",
                             style: AppTextStyles.inter(
                               style: const TextStyle(
                                 color: CColors.dark,
@@ -115,7 +115,7 @@ class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
                       width: screenWidth,
                       text: "CONTINUE",
                       onPressed: () {
-                        print("Good Morning Frndz....");
+                        //print("Good Morning Frndz....");
                       },
                     ),
                   ],

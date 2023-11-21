@@ -34,8 +34,6 @@ class TextFieldWidget extends StatelessWidget {
   final void Function(String)? onSubmit;
   final void Function(String)? onChange;
 
-
-
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -62,7 +60,9 @@ class TextFieldWidget extends StatelessWidget {
           hintText: hint,
           hintStyle: AppTextStyles.inter(
             style: const TextStyle(
-                color: CColors.dark, textBaseline: TextBaseline.alphabetic,),
+              color: CColors.dark,
+              textBaseline: TextBaseline.alphabetic,
+            ),
           ),
           prefixIcon: prefixWidget != null
               ? Padding(

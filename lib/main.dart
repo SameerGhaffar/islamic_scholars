@@ -2,8 +2,10 @@ import 'package:device_preview/device_preview.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:islamic_scholars/screens/admin/bookings.dart';
 import 'package:islamic_scholars/screens/admin/complains_2.dart';
 import 'package:islamic_scholars/screens/admin/admin.dart';
+import 'package:islamic_scholars/screens/admin/home/appointment_2.dart';
 import 'package:islamic_scholars/screens/admin/manage_users/manage_users.dart';
 import 'package:islamic_scholars/screens/admin/package_add.dart';
 import 'package:islamic_scholars/screens/admin/user_info_screen.dart';
@@ -12,9 +14,11 @@ import 'package:islamic_scholars/screens/auth/login.dart';
 import 'package:islamic_scholars/screens/auth/reset_password.dart';
 import 'package:islamic_scholars/screens/auth/signup.dart';
 import 'package:islamic_scholars/screens/admin/appointmnets.dart';
+import 'package:islamic_scholars/screens/calling_screen.dart';
 import 'package:islamic_scholars/screens/cutomer/report_issue.dart';
 import 'package:islamic_scholars/screens/cutomer/report_issue_2.dart';
 
+import 'screens/admin/complains.dart';
 import 'screens/admin/home/admin_home.dart';
 import 'screens/cutomer/home/customer_home.dart';
 import 'screens/package_screen.dart';
@@ -44,13 +48,31 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData(
         useMaterial3: false,
+        // textTheme: GoogleFonts.interTextTheme(
+        //   Theme.of(context).textTheme,
+        // ),
         textTheme: GoogleFonts.interTextTheme(
-          Theme.of(context).textTheme,
-        ),
+        )
       ),
       locale: DevicePreview.locale(context),
       builder: DevicePreview.appBuilder,
-      home:  CustomerHomeScreen(),
+      //home:  LoginScreen(),
+      //home:  ResetPasswordScreen(),
+      // home:  PackagesScreenAdd(),
+      // home:  AdminScreen(),
+      // home:  ManageUsersScreen(),
+      //home:  UserInfoScreen(),
+      //home:  BookingsScreen(),
+      // home:  AppointmentScreen(),
+      // home:  ComplainsScreen(),
+      // home:  ComplainsScreen2(),
+      // home:  const AdminHomeScreen(),
+      // home:  AdminAppointmentScreen2(),
+      // home:  CallingScreen(),
+      // home:  CustomerHomeScreen(),
+      // home:  PackagesScreen(),
+      // home:  ReportIssueScreen(),
+      home:  ReportIssueScreen2(),
 
     );
   }

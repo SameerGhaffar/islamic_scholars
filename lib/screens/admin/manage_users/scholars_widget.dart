@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:islamic_scholars/generated/assets.dart';
+import 'package:islamic_scholars/utils/constants.dart';
 import 'package:islamic_scholars/widgets/text_field_widget.dart';
 import 'package:islamic_scholars/widgets/basic_card_widget.dart';
 
@@ -22,8 +23,9 @@ class ScholarsWidget extends StatelessWidget {
               controller: _controller,
               hint: "Search",
               prefixWidget: Container(
-                margin: const EdgeInsets.only(left: 25),
-
+                margin: const EdgeInsets.only(
+                  left: 25,
+                ),
                 child: const Image(
                   image: AssetImage(Assets.imagesSearch),
                   height: 25,
@@ -34,8 +36,10 @@ class ScholarsWidget extends StatelessWidget {
           ),
           Expanded(
             child: Container(
-              padding:
-                  const EdgeInsets.symmetric(horizontal: 8.0, vertical: 8.0),
+              padding: const EdgeInsets.symmetric(
+                horizontal: 8.0,
+                vertical: 8.0,
+              ),
               child: ListView.builder(
                 itemCount: 5,
                 itemBuilder: (context, index) => BasicCardWidget(
@@ -43,10 +47,9 @@ class ScholarsWidget extends StatelessWidget {
                   asset: Assets.imagesArrowRight,
                   width: screenWidth,
                   height: screenHeight,
-                  networkImage:
-                      "https://play-lh.googleusercontent.com/C9CAt9tZr8SSi4zKCxhQc9v4I6AOTqRmnLchsu1wVDQL0gsQ3fmbCVgQmOVM1zPru8UH=w240-h480-rw",
+                  networkImage: Constants.networkImage,
                   onTap: () {
-                    print("Clicked index is = $index");
+                    //  print("Clicked index is = $index");
                   },
                 ),
               ),

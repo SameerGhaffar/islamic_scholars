@@ -1,21 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:islamic_scholars/utils/colors.dart';
 import 'package:islamic_scholars/utils/constants.dart';
+import 'package:islamic_scholars/utils/text_style.dart';
 import 'package:islamic_scholars/widgets/appbar_widget.dart';
 import 'package:islamic_scholars/widgets/template_box.dart';
 
 class BookingsScreen extends StatelessWidget {
   BookingsScreen({super.key});
 
-  late double screenWidth;
-  late double screenHeight;
-  int? selectedIndex;
-  List<bool> list = [false,true,true,true];
+  final List<bool> list = [false, true, true, true];
 
   @override
   Widget build(BuildContext context) {
-    screenWidth = MediaQuery.of(context).size.width;
-    screenHeight = MediaQuery.of(context).size.height;
+    double screenWidth = MediaQuery.of(context).size.width;
+    double screenHeight = MediaQuery.of(context).size.height;
 
     return Container(
       decoration: BoxDecoration(
@@ -42,6 +40,8 @@ class BookingsScreen extends StatelessWidget {
                       padding: const EdgeInsets.symmetric(vertical: 4),
                       child: myTemplateBox(
                         isGrey: list[index],
+                        screenHeight: screenHeight,
+                        screenWidth: screenWidth,
                       ),
                     ),
                     itemCount: list.length,
@@ -55,9 +55,15 @@ class BookingsScreen extends StatelessWidget {
     );
   }
 
-  Widget myTemplateBox({required bool isGrey}) {
+  Widget myTemplateBox(
+      {required bool isGrey,
+      required double screenHeight,
+      required double screenWidth}) {
     return TemplateBox(
-      height: screenHeight * 0.10,
+      // height: screenHeight * 0.10,
+      constraints: BoxConstraints(
+        minHeight: screenHeight * 0.10,
+      ),
       width: screenWidth * 0.7721,
       borderColor: isGrey ? Colors.grey : null,
       widget: Row(
@@ -68,14 +74,17 @@ class BookingsScreen extends StatelessWidget {
             children: [
               Text(
                 "25",
-                style: TextStyle(
+                style: AppTextStyles.inter(
+                  style: TextStyle(
                     fontSize: 27,
                     fontWeight: FontWeight.w900,
                     color: isGrey ? Colors.grey : CColors.seaGreen,
-                    height: 0.8),
+                    height: 0.8,
+                  ),
+                ),
               ),
               Text(
-                "May",
+                "MAY",
                 style: TextStyle(
                   fontSize: 17,
                   fontWeight: FontWeight.bold,
@@ -91,10 +100,10 @@ class BookingsScreen extends StatelessWidget {
               Text(
                 "To discuss the issue of property",
                 style: TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.w600,
-                    color: isGrey ? Colors.grey : CColors.dark,
-                    height: 0.8),
+                  fontSize: 16,
+                  fontWeight: FontWeight.w600,
+                  color: isGrey ? Colors.grey : CColors.dark,
+                ),
               ),
               Text(
                 "10:30 AM to 11:00 AM",
@@ -112,6 +121,7 @@ class BookingsScreen extends StatelessWidget {
                       Icon(
                         Icons.person,
                         color: isGrey ? Colors.grey : CColors.blue,
+                        size: 20,
                       ),
                       Text(
                         "Hassan Ali",
@@ -123,7 +133,7 @@ class BookingsScreen extends StatelessWidget {
                       ),
                     ],
                   ),
-                  Text(
+                  const Text(
                     "  - ",
                     style: TextStyle(
                       fontSize: 16,
@@ -136,6 +146,7 @@ class BookingsScreen extends StatelessWidget {
                       Icon(
                         Icons.person,
                         color: isGrey ? Colors.grey : CColors.blue,
+                        size: 20,
                       ),
                       Text(
                         "Mufti Mujeeb",

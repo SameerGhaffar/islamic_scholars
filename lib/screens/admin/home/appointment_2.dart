@@ -6,15 +6,12 @@ import 'package:islamic_scholars/widgets/button_widget.dart';
 import 'package:islamic_scholars/widgets/user_info_card.dart';
 
 class AdminAppointmentScreen2 extends StatelessWidget {
-  AdminAppointmentScreen2({super.key});
-
-  late double screenWidth;
-  late double screenHeight;
+  const AdminAppointmentScreen2({super.key});
 
   @override
   Widget build(BuildContext context) {
-    screenWidth = MediaQuery.of(context).size.width;
-    screenHeight = MediaQuery.of(context).size.height;
+    double screenWidth = MediaQuery.of(context).size.width;
+    double screenHeight = MediaQuery.of(context).size.height;
     return Container(
       decoration: BoxDecoration(
         gradient: Constants.skinGradient(),
@@ -29,12 +26,19 @@ class AdminAppointmentScreen2 extends StatelessWidget {
         body: Container(
           width: screenWidth,
           padding: const EdgeInsets.all(12),
-          child:  Column(
+          child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
-
             children: [
-              const UserInfoCard(name: "User Name",email: "email@email.com",number: "+1234567890"),
-              const Padding(padding: EdgeInsets.only(bottom: 34)),
+              const UserInfoCard(
+                name: "User Name",
+                email: "email@email.com",
+                number: "+1234567890",
+              ),
+              const Padding(
+                padding: EdgeInsets.only(
+                  bottom: 34,
+                ),
+              ),
               const Align(
                 alignment: Alignment.centerLeft,
                 child: Column(
@@ -59,7 +63,11 @@ class AdminAppointmentScreen2 extends StatelessWidget {
                   ],
                 ),
               ),
-              const Padding(padding: EdgeInsets.only(bottom: 34)),
+              const Padding(
+                padding: EdgeInsets.only(
+                  bottom: 34,
+                ),
+              ),
               const Align(
                 alignment: Alignment.centerLeft,
                 child: Column(
@@ -84,7 +92,11 @@ class AdminAppointmentScreen2 extends StatelessWidget {
                   ],
                 ),
               ),
-              const Padding(padding: EdgeInsets.only(bottom: 14)),
+              const Padding(
+                padding: EdgeInsets.only(
+                  bottom: 14,
+                ),
+              ),
               const Align(
                 alignment: Alignment.centerLeft,
                 child: Column(
@@ -135,7 +147,11 @@ class AdminAppointmentScreen2 extends StatelessWidget {
                 ),
               ),
               const Padding(padding: EdgeInsets.only(bottom: 14)),
-              BasicButtonWidget(height: screenHeight,width: screenWidth,text: "START A CALL"),
+              BasicButtonWidget(
+                height: screenHeight,
+                width: screenWidth,
+                text: "START A CALL",
+              ),
             ],
           ),
         ),

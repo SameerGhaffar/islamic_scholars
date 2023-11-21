@@ -4,21 +4,18 @@ import 'package:islamic_scholars/utils/colors.dart';
 import 'package:islamic_scholars/utils/constants.dart';
 import 'package:islamic_scholars/widgets/appbar_widget.dart';
 import 'package:islamic_scholars/widgets/button_widget.dart';
-import 'package:islamic_scholars/widgets/selectionWidget.dart';
 import 'package:islamic_scholars/widgets/template_box.dart';
 import 'package:islamic_scholars/widgets/user_info_card.dart';
 
 class ComplainsScreen2 extends StatelessWidget {
-  ComplainsScreen2({super.key});
+  const ComplainsScreen2({super.key});
 
-  late double screenWidth;
-  late double screenHeight;
+
 
   @override
   Widget build(BuildContext context) {
-    screenWidth = MediaQuery.of(context).size.width;
-    screenHeight = MediaQuery.of(context).size.height;
-    int selectedIndex = 0;
+    double screenHeight = MediaQuery.of(context).size.height;
+
     return Container(
       decoration: BoxDecoration(
         gradient: Constants.skinGradient(),

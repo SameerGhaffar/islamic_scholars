@@ -51,7 +51,7 @@ class _ManageUsersScreenState extends State<ManageUsersScreen> {
               ),
               Expanded(
                 child: TabBarView(
-                  physics: NeverScrollableScrollPhysics(),
+                  physics: const NeverScrollableScrollPhysics(),
                   children: [
                     ScholarsWidget(
                       screenHeight: screenHeight,

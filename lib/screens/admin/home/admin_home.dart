@@ -16,7 +16,6 @@ class AdminHomeScreen extends StatefulWidget {
 }
 
 class _AdminHomeScreenState extends State<AdminHomeScreen> {
-
   bool isTrue = true;
   double? screenWidth;
   double? screenHeight;
@@ -35,7 +34,7 @@ class _AdminHomeScreenState extends State<AdminHomeScreen> {
       child: Scaffold(
         backgroundColor: Colors.transparent,
         appBar: MyAppBarWidget(
-          text: "Set as away",
+          text: "Set as Away",
           centerTitle: false,
           fontWeight: FontWeight.w400,
           fontSize: 18,
@@ -54,9 +53,10 @@ class _AdminHomeScreenState extends State<AdminHomeScreen> {
         ),
         bottomNavigationBar: Container(
           decoration: BoxDecoration(
-              border: Border.all(
-            color: CColors.seaGreen,
-          )),
+            border: Border.all(
+              color: CColors.seaGreen,
+            ),
+          ),
           child: BottomNavigationBar(
             currentIndex: selectedIndex,
             onTap: (value) {
@@ -78,10 +78,11 @@ class _AdminHomeScreenState extends State<AdminHomeScreen> {
               ),
               BottomNavigationBarItem(
                 icon: Image(
-                    image: const AssetImage(Assets.imagesTimeCircle),
-                    width: 32,
-                    height: 32,
-                    color: selectedIndex == 1 ? CColors.dark : Colors.grey),
+                  image: const AssetImage(Assets.imagesTimeCircle),
+                  width: 32,
+                  height: 32,
+                  color: selectedIndex == 1 ? CColors.dark : Colors.grey,
+                ),
                 label: "Availability",
               ),
               BottomNavigationBarItem(
@@ -100,10 +101,13 @@ class _AdminHomeScreenState extends State<AdminHomeScreen> {
       ),
     );
   }
+
   Widget _getBody(index) {
     switch (index) {
       case 0:
-        return AdminAppointments(isOnline: isTrue,);
+        return AdminAppointments(
+          isOnline: isTrue,
+        );
       case 1:
         return AdminAvailability();
       case 2:
@@ -113,5 +117,3 @@ class _AdminHomeScreenState extends State<AdminHomeScreen> {
     }
   }
 }
-
-
