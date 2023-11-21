@@ -14,6 +14,8 @@ class TextFieldWidget extends StatelessWidget {
     this.keyboardType,
     this.onSubmit,
     this.onChange,
+    this.maxLines = 1,
+    this.expands = false,
     Key? key,
   }) : super(key: key);
 
@@ -24,10 +26,15 @@ class TextFieldWidget extends StatelessWidget {
   final Widget? prefixWidget;
   final Widget? suffixWidget;
   final bool? enable;
-  final void Function(String)? onSubmit;
-  final void Function(String)? onChange;
   final double? verticalPadding;
   final TextInputType? keyboardType;
+  final bool? expands;
+  final int? maxLines;
+
+  final void Function(String)? onSubmit;
+  final void Function(String)? onChange;
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -37,6 +44,8 @@ class TextFieldWidget extends StatelessWidget {
         borderRadius: BorderRadius.circular(8.0),
       ),
       child: TextField(
+        expands: expands!,
+        maxLines: maxLines,
         keyboardType: keyboardType,
         enabled: enable,
         onChanged: onChange,
@@ -52,7 +61,8 @@ class TextFieldWidget extends StatelessWidget {
           // Adjust this value
           hintText: hint,
           hintStyle: AppTextStyles.inter(
-            style: const TextStyle(color: CColors.dark,textBaseline: TextBaseline.alphabetic),
+            style: const TextStyle(
+                color: CColors.dark, textBaseline: TextBaseline.alphabetic,),
           ),
           prefixIcon: prefixWidget != null
               ? Padding(

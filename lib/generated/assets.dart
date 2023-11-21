@@ -8,6 +8,7 @@ class Assets {
   static const String imagesAuthbg = 'assets/images/authbg.png';
   static const String imagesCalendar = 'assets/images/Calendar.png';
   static const String imagesCall = 'assets/images/Call.png';
+  static const String imagesClip = 'assets/images/clip.png';
   static const String imagesComplain = 'assets/images/Complain.png';
   static const String imagesEditSquare = 'assets/images/EditSquare.png';
   static const String imagesEmail = 'assets/images/Email.png';

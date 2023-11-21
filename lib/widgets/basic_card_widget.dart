@@ -20,6 +20,9 @@ class BasicCardWidget extends StatelessWidget {
     this.bgColor,
     this.onTap,
     this.widget,
+    this.fontSize,
+    this.fontWeight,
+    this.textColor,
   });
 
   final double height;
@@ -32,6 +35,9 @@ class BasicCardWidget extends StatelessWidget {
   final Color? bgColor;
   final Color? borderColor;
   final double? borderWidth;
+  final double? fontSize;
+  final Color? textColor;
+  final FontWeight? fontWeight;
   final void Function()? onTap;
   final Widget? widget;
 
@@ -65,7 +71,12 @@ class BasicCardWidget extends StatelessWidget {
               child: Text(
                 text,
                 style: AppTextStyles.inter(
-                    style: const TextStyle(fontSize: 18, color: CColors.dark)),
+                  style: TextStyle(
+                    fontSize: fontSize ?? 18,
+                    color: textColor ?? CColors.dark,
+                    fontWeight: fontWeight,
+                  ),
+                ),
               ),
             ),
             asset != null

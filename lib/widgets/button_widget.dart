@@ -12,9 +12,11 @@ class BasicButtonWidget extends StatelessWidget {
     this.textColor,
     this.borderColor,
     this.onPressed,
+    this.hPercent,
   });
 
   final double height;
+  final double? hPercent;
   final double? width;
   final String text;
   final Color? color;
@@ -36,7 +38,7 @@ class BasicButtonWidget extends StatelessWidget {
           ),
         ],
       ),
-      height: height * 0.06,
+      height: hPercent != null ? height * hPercent! : height * 0.06,
       width: width != null ? (width! * 0.80)  : null,
       child: ElevatedButton(
         onPressed: onPressed,
