@@ -40,8 +40,6 @@ class _SignupScreenState extends State<SignupScreen> {
           SafeArea(
             child: Center(
               child: SizedBox(
-                height:screenHeight*0.72,
-                width: screenWidth*0.8,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   crossAxisAlignment: CrossAxisAlignment.center,
@@ -76,40 +74,7 @@ class _SignupScreenState extends State<SignupScreen> {
                       onPressed: () {},
                     ),
                     const Padding(padding: EdgeInsets.only(bottom: 10)),
-                    RichText(
-                      text: TextSpan(
-                        children: [
-                          TextSpan(
-                            text: "Already have an account?",
-                            style: AppTextStyles.inter(
-                              style: const TextStyle(
-                                color: CColors.dark,
-                                fontSize: 18,
-                                fontWeight: FontWeight.w600,
-                              ),
-                            ),
-                          ),
-                          
-                          TextSpan(
-                            text: " Sign In",
-                            recognizer: TapGestureRecognizer()
-                              ..onTap = () {
-                                Navigator.pushAndRemoveUntil(context,
-                                    MaterialPageRoute(
-                                      builder: (_) => const LoginScreen(),), (
-                                        route) => false);
-                              },
-                            style: AppTextStyles.inter(
-                              style: const TextStyle(
-                                color: CColors.blue,
-                                fontSize: 18,
-                                fontWeight: FontWeight.w600,
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
+                    existingAccount(),
                   ],
                 ),
               ),
@@ -118,5 +83,37 @@ class _SignupScreenState extends State<SignupScreen> {
         ],
       ),
     );
+  }
+
+  Widget existingAccount() {
+    return RichText(
+                    text: TextSpan(
+                      children: [
+                        TextSpan(
+                          text: "Already have an account?",
+                          style: AppTextStyles.inter(
+                            style: const TextStyle(
+                              color: CColors.dark,
+                              fontSize: 18,
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
+                        ),
+
+                        TextSpan(
+                          text: " Sign In",
+                          recognizer: TapGestureRecognizer()
+                            ..onTap = ()=> Navigator.pushAndRemoveUntil(context,MaterialPageRoute(builder: (_) => const LoginScreen(),),(route) => false),
+                          style: AppTextStyles.inter(
+                            style: const TextStyle(
+                              color: CColors.blue,
+                              fontSize: 18,
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  );
   }
 }

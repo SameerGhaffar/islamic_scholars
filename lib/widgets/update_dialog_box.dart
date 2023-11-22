@@ -24,6 +24,7 @@ class UpdateDialogBox extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20,vertical: 34),
           child: Column(
+            mainAxisSize: MainAxisSize.min,
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               CircleImageWidget(size: 159, networkImage: Constants.networkImage),

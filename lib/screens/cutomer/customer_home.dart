@@ -4,11 +4,12 @@ import 'package:islamic_scholars/generated/assets.dart';
 import 'package:islamic_scholars/screens/admin/home/appointments.dart';
 import 'package:islamic_scholars/screens/admin/home/availability.dart';
 import 'package:islamic_scholars/screens/admin/home/myprofile.dart';
-import 'package:islamic_scholars/screens/cutomer/home/availability.dart';
-import 'package:islamic_scholars/screens/cutomer/home/myprofile.dart';
+import 'package:islamic_scholars/screens/cutomer/availability.dart';
 import 'package:islamic_scholars/utils/colors.dart';
 import 'package:islamic_scholars/utils/constants.dart';
 import 'package:islamic_scholars/widgets/appbar_widget.dart';
+
+import 'myprofile.dart';
 
 class CustomerHomeScreen extends StatefulWidget {
   const CustomerHomeScreen({super.key});

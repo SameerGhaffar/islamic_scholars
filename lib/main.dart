@@ -15,12 +15,10 @@ import 'package:islamic_scholars/screens/auth/reset_password.dart';
 import 'package:islamic_scholars/screens/auth/signup.dart';
 import 'package:islamic_scholars/screens/admin/appointmnets.dart';
 import 'package:islamic_scholars/screens/calling_screen.dart';
-import 'package:islamic_scholars/screens/cutomer/report_issue.dart';
-import 'package:islamic_scholars/screens/cutomer/report_issue_2.dart';
+import 'package:islamic_scholars/screens/cutomer/profile/complains/report_issue.dart';
 
 import 'screens/admin/complains.dart';
 import 'screens/admin/home/admin_home.dart';
-import 'screens/cutomer/home/customer_home.dart';
 import 'screens/package_screen.dart';
 
 void main() {
@@ -56,7 +54,7 @@ class MyApp extends StatelessWidget {
       ),
       locale: DevicePreview.locale(context),
       builder: DevicePreview.appBuilder,
-      //home:  LoginScreen(),
+      home:  LoginScreen(),
       //home:  ResetPasswordScreen(),
       // home:  PackagesScreenAdd(),
       // home:  AdminScreen(),
@@ -72,7 +70,7 @@ class MyApp extends StatelessWidget {
       // home:  CustomerHomeScreen(),
       // home:  PackagesScreen(),
       // home:  ReportIssueScreen(),
-      home:  ReportIssueScreen2(),
+     // home:  ReportIssueScreen2(),
 
     );
   }
